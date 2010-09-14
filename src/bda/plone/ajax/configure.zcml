@@ -1,0 +1,16 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:browser="http://namespaces.zope.org/browser">
+
+  <include package="bdajax" file="zope.zcml" />
+
+  <include file="profile.zcml" />
+  
+  <browser:viewlet
+    for="*"
+    name="bda.ajax"
+    manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+    template="bda.ajax.pt"
+    permission="zope.Public"
+  />
+
+</configure>

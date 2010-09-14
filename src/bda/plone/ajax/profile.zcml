@@ -1,0 +1,14 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
+
+  <include package="Products.GenericSetup" file="meta.zcml" />
+
+  <genericsetup:registerProfile
+      name="default"
+      title="bda.plone.ajax"
+      directory="profile"
+      description="Extension profile for bda.plone.ajax."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+  />
+
+</configure>

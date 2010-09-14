@@ -1,0 +1,1 @@
+<tal:view replace="structure context/@@bdajax" />
