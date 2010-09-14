@@ -9,7 +9,7 @@
     expression=""
     id="++resource++bdajax/bdajax.js"
     inline="False"
-	insert-after="++resource++plone.app.jquerytools.overlayhelpers.js"
+	insert-after="++resource++plone.app.jquerytools.plugins.js"
   />
 
 </object>
