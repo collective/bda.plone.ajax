@@ -1,4 +1,4 @@
-<tal:ajax xmlns:ajax="http://namesspaces.bluedynamics.eu/ajax" omit-tag="True">
+<div xmlns:ajax="http://namesspaces.bluedynamics.eu/ajax" omit-tag="True">
 
   <div class="tile_b"
        ajax:bind="alter_tile"
@@ -9,8 +9,9 @@
     <a href=""
        ajax:bind="click"
        ajax:event="alter_tile:.tile_b"
-       ajax:target="${context/absolute_url}">alter me</a>
+       ajax:target=""
+       tal:attributes="ajax:target context/absolute_url">alter me</a>
     
   </div>
 
-</tal:ajax>
+</div>

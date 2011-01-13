@@ -3,7 +3,7 @@ try:
 except ImportError:
     import simplejson as json
 from zope.component import getMultiAdapter
-from zope.component.interfaces import ConponentLookupError
+from zope.component.interfaces import ComponentLookupError
 from zope.publisher.interfaces.browser import IBrowserView
 from zope.contentprovider.interfaces import IContentProvider
 from Products.Five import BrowserView
@@ -15,15 +15,15 @@ class Action(BrowserView):
         selector = self.request.get('bdajax.selector')
         action = self.request.get('bdajax.action')
         ret = {
-            mode: mode,
-            selector: selector,
+            'mode': mode,
+            'selector': selector,
         }
         try:
             toadapt = (self.context, self.request)
             view = getMultiAdapter(toadapt,
                                    IBrowserView,
                                    name=action)
-        except ComponenLookupError:
+        except ComponentLookupError:
             view = None
         if view:
             ret['payload'] = view()
@@ -33,7 +33,7 @@ class Action(BrowserView):
             renderer = getMultiAdapter(toadapt,
                                        IContentProvider,
                                        name=action)
-        except ComponenLookupError:
+        except ComponentLookupError:
             renderer = None
         if renderer:
             renderer.update()

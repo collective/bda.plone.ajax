@@ -18,9 +18,9 @@
   />
   
   <adapter
-    provides="zope.component.interfaces.IContentProvider"
-    factory=".provider.Provider"
     name="bdajax_example_tile_b"
+    provides="zope.contentprovider.interfaces.IContentProvider"
+    factory=".provider.Provider"
   />
   
 </configure>
