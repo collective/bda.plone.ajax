@@ -1,6 +1,7 @@
 <configure xmlns="http://namespaces.zope.org/zope"
            xmlns:browser="http://namespaces.zope.org/browser">
 
+  <!-- plone view integrating a tile -->
   <browser:page
     for="*"
 	name="bdajax_example_view"
@@ -9,6 +10,7 @@
 	layer="bda.plone.ajax.interfaces.IAjaxLayer"
   />
   
+  <!-- tile as browser page -->
   <browser:page
     for="*"
 	name="bdajax_example_tile_a"
@@ -17,6 +19,7 @@
 	layer="bda.plone.ajax.interfaces.IAjaxLayer"
   />
   
+  <!-- tile as content provider -->
   <adapter
     name="bdajax_example_tile_b"
     provides="zope.contentprovider.interfaces.IContentProvider"

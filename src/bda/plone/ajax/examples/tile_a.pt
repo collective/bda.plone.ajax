@@ -1,9 +1,12 @@
+<!-- define xmlns -->
 <div xmlns:ajax="http://namesspaces.bluedynamics.eu/ajax" omit-tag="True">
 
+  <!-- the tile -->
   <div class="tile_a">
     
     <h3>I am tile A</h3>
     
+    <!-- perform action directly -->
     <a href=""
        ajax:bind="click"
        ajax:action="bdajax_example_tile_b:.tile_a:replace"

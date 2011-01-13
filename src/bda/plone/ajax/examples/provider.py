@@ -1,9 +1,13 @@
 from Acquisition import Explicit
-from zope.interface import Interface
-from zope.interface import implements
+from zope.interface import (
+    Interface,
+    implements,
+)
 from zope.component import adapts
-from zope.publisher.interfaces.browser import IBrowserRequest
-from zope.publisher.interfaces.browser import IBrowserView
+from zope.publisher.interfaces.browser import (
+    IBrowserRequest,
+    IBrowserView,
+)
 from zope.contentprovider.interfaces import IContentProvider
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
