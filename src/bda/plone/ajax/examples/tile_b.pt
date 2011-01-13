@@ -1,14 +1,27 @@
 <div xmlns:ajax="http://namesspaces.bluedynamics.eu/ajax" omit-tag="True">
 
   <div class="tile_b"
-       ajax:bind="alter_tile"
-       ajax:action="bdajax_example_tile_a:.tile_b:replace">
+       ajax:bind="altertile"
+       ajax:action="bdajax_example_tile_a:.tile_b:replace"
+       tal:condition="nothing">
     
     <h3>I am tile B</h3>
     
     <a href=""
        ajax:bind="click"
-       ajax:event="alter_tile:.tile_b"
+       ajax:event="altertile:.tile_b"
+       ajax:target=""
+       tal:attributes="ajax:target context/absolute_url">alter me</a>
+    
+  </div>
+  
+  <div class="tile_b">
+    
+    <h3>I am tile B</h3>
+    
+    <a href=""
+       ajax:bind="click"
+       ajax:action="bdajax_example_tile_a:.tile_b:replace"
        ajax:target=""
        tal:attributes="ajax:target context/absolute_url">alter me</a>
     
