@@ -14,6 +14,12 @@ Installation
 Changes
 =======
 
+1.1
+---
+
+    - add ajaxaction view
+      [rnix]
+
 1.0
 ---
 

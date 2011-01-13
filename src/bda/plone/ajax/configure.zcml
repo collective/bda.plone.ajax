@@ -12,6 +12,16 @@
     manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
     template="bda.ajax.pt"
     permission="zope.Public"
+	layer="bda.plone.ajax.interfaces.IAjaxLayer"
+  />
+  
+  <browser:page
+    for="*"
+	name="ajaxaction"
+	class=".action.Action"
+	attribute="ajaxaction"
+	permission="zope.Public"
+    layer="bda.plone.ajax.interfaces.IAjaxLayer"
   />
 
 </configure>

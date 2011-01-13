@@ -1,0 +1,14 @@
+<tal:ajax xmlns:ajax="http://namesspaces.bluedynamics.eu/ajax" omit-tag="True">
+
+  <div class="tile_a">
+    
+    <h3>I am tile A</h3>
+    
+    <a href=""
+       ajax:bind="click"
+       ajax:action="bdajax_example_tile_b:.tile_a:replace"
+       ajax:target="${context/absolute_url}">alter me</a>
+    
+  </div>
+
+</tal:ajax>

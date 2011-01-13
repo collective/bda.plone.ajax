@@ -1,0 +1,26 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:browser="http://namespaces.zope.org/browser">
+
+  <browser:page
+    for="*"
+	name="bdajax_example_view"
+	template="ploneview.pt"
+	permission="zope2.View"
+	layer="bda.plone.ajax.interfaces.IAjaxLayer"
+  />
+  
+  <browser:page
+    for="*"
+	name="bdajax_example_tile_a"
+	template="tile_a.pt"
+	permission="zope2.View"
+	layer="bda.plone.ajax.interfaces.IAjaxLayer"
+  />
+  
+  <adapter
+    provides="zope.component.interfaces.IContentProvider"
+    factory=".provider.Provider"
+    name="bdajax_example_tile_b"
+  />
+  
+</configure>
