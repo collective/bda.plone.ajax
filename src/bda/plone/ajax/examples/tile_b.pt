@@ -1,8 +1,6 @@
 <div xmlns:ajax="http://namesspaces.bluedynamics.eu/ajax" tal:omit-tag="">
 
-  <!--
-    the tile, bind custom event to tile and perform action if event triggered
-  -->
+  <!-- bind custom event to tile, perform action if event triggered -->
   <div class="tile_b"
        style="background-color:#61ff68;"
        ajax:bind="altertile"
