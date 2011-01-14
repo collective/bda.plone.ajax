@@ -4,7 +4,6 @@ except ImportError:
     import simplejson as json
 from zope.component import getMultiAdapter
 from zope.component.interfaces import ComponentLookupError
-from zope.publisher.interfaces.browser import IBrowserView
 from zope.contentprovider.interfaces import IContentProvider
 from Products.Five import BrowserView
 
@@ -19,11 +18,8 @@ class Action(BrowserView):
             'selector': selector,
         }
         try:
-            toadapt = (self.context, self.request)
-            view = getMultiAdapter(toadapt,
-                                   IBrowserView,
-                                   name=action)
-        except ComponentLookupError:
+            view = self.context.restrictedTraverse(action)
+        except KeyError:
             view = None
         if view:
             ret['payload'] = view()

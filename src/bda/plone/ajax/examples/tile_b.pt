@@ -1,10 +1,10 @@
-<!-- define xmlns -->
-<div xmlns:ajax="http://namesspaces.bluedynamics.eu/ajax" omit-tag="True">
+<div xmlns:ajax="http://namesspaces.bluedynamics.eu/ajax" tal:omit-tag="">
 
   <!--
     the tile, bind custom event to tile and perform action if event triggered
   -->
   <div class="tile_b"
+       style="background-color:#61ff68;"
        ajax:bind="altertile"
        ajax:action="bdajax_example_tile_a:.tile_b:replace">
     
