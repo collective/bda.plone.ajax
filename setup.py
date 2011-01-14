@@ -31,6 +31,7 @@ setup(name='bda.plone.ajax',
       zip_safe=False,
       install_requires=[
           'setuptools',
+          'Plone',
           'plone.app.jquerytools',
           'bdajax',
           # -*- Extra requirements: -*
