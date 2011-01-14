@@ -13,16 +13,16 @@
     manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
     template="bda.ajax.pt"
     permission="zope.Public"
-	layer="bda.plone.ajax.interfaces.IAjaxLayer"
+    layer="bda.plone.ajax.interfaces.IAjaxLayer"
   />
   
   <!-- ajax view expected by bdajax for action performing -->
   <browser:page
     for="*"
-	name="ajaxaction"
-	class=".action.Action"
-	attribute="ajaxaction"
-	permission="zope.Public"
+    name="ajaxaction"
+    class=".action.Action"
+    attribute="ajaxaction"
+    permission="zope.Public"
     layer="bda.plone.ajax.interfaces.IAjaxLayer"
   />
 

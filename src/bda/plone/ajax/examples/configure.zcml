@@ -4,19 +4,19 @@
   <!-- plone view integrating a tile -->
   <browser:page
     for="*"
-	name="bdajax_example_view"
-	template="ploneview.pt"
-	permission="zope2.View"
-	layer="bda.plone.ajax.interfaces.IAjaxLayer"
+    name="bdajax_example_view"
+    template="ploneview.pt"
+    permission="zope2.View"
+    layer="bda.plone.ajax.interfaces.IAjaxLayer"
   />
   
   <!-- tile as browser page -->
   <browser:page
     for="*"
-	name="bdajax_example_tile_a"
-	template="tile_a.pt"
-	permission="zope2.View"
-	layer="bda.plone.ajax.interfaces.IAjaxLayer"
+    name="bdajax_example_tile_a"
+    template="tile_a.pt"
+    permission="zope2.View"
+    layer="bda.plone.ajax.interfaces.IAjaxLayer"
   />
   
   <!-- tile as content provider -->
