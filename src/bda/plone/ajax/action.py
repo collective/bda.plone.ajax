@@ -6,8 +6,17 @@ from zope.component import getMultiAdapter
 from zope.component.interfaces import ComponentLookupError
 from zope.contentprovider.interfaces import IContentProvider
 from Products.Five import BrowserView
+from bda.plone.ajax import AjaxContinue
 
 class Action(BrowserView):
+    
+    def continuation(self, ret):
+        continuation = self.request.get('cone.app.continuation')
+        if continuation:
+            continuation = AjaxContinue(continuation).definitions
+        else:
+            continuation = False
+        ret['continuation'] = continuation
     
     def ajaxaction(self):
         """Ajaxaction view, expected by bdajax contract.
@@ -29,6 +38,7 @@ class Action(BrowserView):
             view = None
         if view:
             ret['payload'] = view()
+            self.continuation(ret)
             return json.dumps(ret)
         try:
             toadapt = (self.context, self.request, self)
@@ -40,5 +50,6 @@ class Action(BrowserView):
         if renderer:
             renderer.update()
             ret['payload'] = renderer.render()
+            self.continuation(ret)
             return json.dumps(ret)
         raise Exception('Ajax action "%s" not found' % action);

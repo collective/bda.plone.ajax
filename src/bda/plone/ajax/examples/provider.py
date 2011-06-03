@@ -10,6 +10,7 @@ from zope.publisher.interfaces.browser import (
 )
 from zope.contentprovider.interfaces import IContentProvider
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from bda.plone.ajax import ajax_message
 
 class Provider(Explicit):
     
@@ -27,4 +28,5 @@ class Provider(Explicit):
         pass
     
     def render(self):
+        ajax_message(self.request, 'Message')
         return self.template(self)
