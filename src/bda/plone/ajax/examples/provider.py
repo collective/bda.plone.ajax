@@ -28,5 +28,7 @@ class Provider(Explicit):
         pass
     
     def render(self):
-        ajax_message(self.request, 'Message')
+        # set here continuation message. See bda.plone.ajax.__init__ for
+        # details.
+        ajax_message(self.request, 'Demo continuation message')
         return self.template(self)

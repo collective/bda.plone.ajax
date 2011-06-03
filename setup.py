@@ -1,11 +1,8 @@
-# Copyright 2010, BlueDynamics Alliance - http://bluedynamics.com
-# GNU General Public License Version 2 or later
-
 from setuptools import setup, find_packages
 import sys, os
 
-version = '1.1'
-shortdesc ="bdajax integration for plone."
+version = '1.2'
+shortdesc ="bdajax integration for Plone."
 longdesc = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
 longdesc += open(os.path.join(os.path.dirname(__file__), 'LICENSE.rst')).read()
 

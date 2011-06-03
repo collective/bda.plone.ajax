@@ -1,5 +1,9 @@
 import types
-import json
+try:
+    import json
+except ImportError:
+    import simplejson as json
+
 
 def ajax_continue(request, continuation):
     """Set ajax continuation on request.

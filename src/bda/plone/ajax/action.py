@@ -8,6 +8,7 @@ from zope.contentprovider.interfaces import IContentProvider
 from Products.Five import BrowserView
 from bda.plone.ajax import AjaxContinue
 
+
 class Action(BrowserView):
     
     def continuation(self, ret):
