@@ -12,13 +12,13 @@ def ajax_continue(request, continuation):
         list of continuation definition objects or single continuation
         definition.
     """
-    if request.get('cone.app.continuation', None) is None:
-        request['cone.app.continuation'] = list()
+    if request.get('bda.plone.ajax.continuation', None) is None:
+        request['bda.plone.ajax.continuation'] = list()
     if type(continuation) is types.ListType:
-        existent = request['cone.app.continuation']
-        request['cone.app.continuation'] = existent + continuation
+        existent = request['bda.plone.ajax.continuation']
+        request['bda.plone.ajax.continuation'] = existent + continuation
     else:
-        request['cone.app.continuation'].append(continuation)
+        request['bda.plone.ajax.continuation'].append(continuation)
 
 
 def ajax_message(request, payload, flavor='message'):
@@ -36,8 +36,7 @@ def ajax_status_message(request, payload):
 
 
 class AjaxAction(object):
-    """Ajax action configuration. Used to define continuation actions for
-    client side.
+    """Ajax action continuation definition.
     """
     
     def __init__(self, target, name, mode, selector):
@@ -48,8 +47,7 @@ class AjaxAction(object):
 
 
 class AjaxEvent(object):
-    """Ajax event configuration. Used to define continuation events for
-    client side.
+    """Ajax event continuation definition.
     """
     
     def __init__(self, target, name, selector):
@@ -59,8 +57,7 @@ class AjaxEvent(object):
 
 
 class AjaxMessage(object):
-    """Ajax Message configuration. Used to define continuation messages for
-    client side.
+    """Ajax message continuation definition.
     """
     
     def __init__(self, payload, flavor, selector):
@@ -70,8 +67,8 @@ class AjaxMessage(object):
 
 
 class AjaxContinue(object):
-    """Convert ``AjaxAction`` and ``AjaxEvent`` instances to JSON response
-    definitions for bdajax continuation.
+    """Convert ``AjaxAction``, ``AjaxEvent`` and ``AjaxMessage`` instances to
+    JSON response definitions for bdajax continuation.
     """
     
     def __init__(self, continuation):

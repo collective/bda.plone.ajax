@@ -19,7 +19,7 @@ Usage
 This package ships with demos. See examples folder in source code for more
 details.
 
-This package ships with some AJAX continuation helper objects and functions.
+This package ships with AJAX continuation helper objects and functions.
 See ``bda.plone.ajax.__init__`` for details.
 
 
@@ -31,6 +31,13 @@ Contributors
 
 Changes
 =======
+
+1.2.1dev
+--------
+
+- display ``bdajax.message`` with traceback if ``ajaxaction`` raises uncaught
+  exception
+  [rnix]
 
 1.2
 ---
