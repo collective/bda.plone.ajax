@@ -32,10 +32,10 @@ Contributors
 Changes
 =======
 
-1.2.1dev
---------
+1.2.1
+-----
 
-- display ``bdajax.message`` with traceback if ``ajaxaction`` raises uncaught
+- display ``bdajax.message`` with traceback if ``ajaxaction`` throws uncaught
   exception
   [rnix]
 
