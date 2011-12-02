@@ -9,7 +9,7 @@ Installation
 ============
 
   * make egg available in your instance
-  
+
   * apply extension profile
 
 
@@ -28,9 +28,22 @@ Contributors
 
     - Robert Niederreiter <rnix@squarewave.at>
 
+    - Jens W. Klein <jens@bluedynamics.com>
+
 
 Changes
 =======
+
+1.2.2
+-----
+
+- render viewlet in IPortalTop, so it pops up centered and not at the end of
+  the site.
+  [jensens, 2011-12-02]
+
+- add z3c.autoinclude entry point
+  [jensens, 2011-12-02]
+
 
 1.2.1
 -----
