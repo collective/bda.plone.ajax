@@ -10,7 +10,7 @@
   <browser:viewlet
     for="*"
     name="bda.ajax"
-    manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+    manager="plone.app.layout.viewlets.interfaces.IPortalTop"
     template="bda.ajax.pt"
     permission="zope.Public"
     layer="bda.plone.ajax.interfaces.IAjaxLayer"
