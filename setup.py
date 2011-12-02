@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import sys, os
 
-version = '1.2.1'
+version = '1.2.2'
 shortdesc ="bdajax integration for Plone."
 longdesc = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
 longdesc += open(os.path.join(os.path.dirname(__file__), 'LICENSE.rst')).read()
@@ -32,11 +32,9 @@ setup(name='bda.plone.ajax',
           'Plone',
           'plone.app.jquerytools',
           'bdajax',
-          # -*- Extra requirements: -*
       ],
-      extras_require = dict(
-      ),
       entry_points="""
-      # -*- Entry points: -*-
-      """,
+      [z3c.autoinclude.plugin]
+      target = plone
+      """,  
       )
