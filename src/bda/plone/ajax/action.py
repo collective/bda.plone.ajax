@@ -14,9 +14,6 @@ from bda.plone.ajax import (
 from .utils import format_traceback
 
 
-logger = logging.getLogger('bda.plone.ajax')
-
-
 class Action(BrowserView):
     
     def continuation(self, ret):
@@ -57,13 +54,12 @@ class Action(BrowserView):
             self.continuation(ret)
             return json.dumps(ret)
         except Exception:
-            logging.exception('Error within ajax tile')
             tb = format_traceback()
             continuation = AjaxContinue(
                 [AjaxMessage(tb, 'error', None)]).definitions
-            return {
+            return json.dumps({
                 'mode': 'NONE',
                 'selector': 'NONE',
                 'payload': '',
                 'continuation': continuation,
-            }
+            })
