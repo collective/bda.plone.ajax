@@ -2,8 +2,6 @@ try:
     import json
 except ImportError:
     import simplejson as json
-import sys
-import traceback
 import logging
 from zope.component import getMultiAdapter
 from zope.component.interfaces import ComponentLookupError
@@ -13,14 +11,10 @@ from bda.plone.ajax import (
     AjaxContinue,
     AjaxMessage,
 )
+from .utils import format_traceback
+
 
 logger = logging.getLogger('bda.plone.ajax')
-
-
-def format_traceback():
-    etype, value, tb = sys.exc_info()
-    ret = ''.join(traceback.format_exception(etype, value, tb))
-    return '<pre>%s</pre>' % ret
 
 
 class Action(BrowserView):
