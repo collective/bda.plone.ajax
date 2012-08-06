@@ -44,25 +44,18 @@ class Action(BrowserView):
             }
             try:
                 view = self.context.restrictedTraverse(action)
-            except KeyError:
+            except (KeyError, AttributeError):
                 view = None
             if view:
                 ret['payload'] = view()
                 self.continuation(ret)
                 return json.dumps(ret)
-            try:
-                toadapt = (self.context, self.request, self)
-                renderer = getMultiAdapter(toadapt,
-                                           IContentProvider,
-                                           name=action)
-            except ComponentLookupError:
-                renderer = None
-            if renderer:
-                renderer.update()
-                ret['payload'] = renderer.render()
-                self.continuation(ret)
-                return json.dumps(ret)
-            raise Exception('Ajax action "%s" not found' % action);
+            toadapt = (self.context, self.request, self)
+            renderer = getMultiAdapter(toadapt, IContentProvider, name=action)
+            renderer.update()
+            ret['payload'] = renderer.render()
+            self.continuation(ret)
+            return json.dumps(ret)
         except Exception:
             logging.exception('Error within ajax tile')
             tb = format_traceback()
