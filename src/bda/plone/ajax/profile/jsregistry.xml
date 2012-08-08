@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 <object name="portal_javascripts" meta_type="JavaScripts Registry">
-
   <javascript
     cacheable="True"
     compression="safe"
@@ -9,7 +8,5 @@
     expression=""
     id="++resource++bdajax/bdajax.js"
     inline="False"
-	insert-after="++resource++plone.app.jquerytools.plugins.js"
-  />
-
+    insert-after="++resource++plone.app.jquerytools.plugins.js" />
 </object>

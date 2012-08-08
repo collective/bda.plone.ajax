@@ -2,6 +2,5 @@
 <layers>
   <layer
     name="bda.plone.ajax"
-    interface="bda.plone.ajax.interfaces.IAjaxLayer"
-  />
+    interface="bda.plone.ajax.interfaces.IAjaxLayer" />
 </layers>
