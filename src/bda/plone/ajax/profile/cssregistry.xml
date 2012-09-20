@@ -10,5 +10,5 @@
     id="++resource++bdajax/bdajax.css"
     media="all"
     rel="stylesheet"
-    rendering="import" />
+    rendering="link" />
 </object>
