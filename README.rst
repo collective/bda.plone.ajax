@@ -26,16 +26,16 @@ See ``bda.plone.ajax.__init__`` for details.
 Contributors
 ============
 
-    - Robert Niederreiter <rnix [at] squarewave [dot] at>
+- Robert Niederreiter <rnix [at] squarewave [dot] at>
 
-    - Jens W. Klein <jens [at] bluedynamics [dot] com>
+- Jens W. Klein <jens [at] bluedynamics [dot] com>
 
 
 Changes
 =======
 
-1.3dev
-------
+1.3
+---
 
 - Provide overlay configuration
   [rnix, 2012-08-06]
