@@ -34,6 +34,7 @@ Contributors
 Changes
 =======
 
+
 1.3
 ---
 
@@ -42,6 +43,7 @@ Changes
 
 - Provide form continuation
   [rnix, 2012-08-06]
+
 
 1.2.2
 -----
@@ -60,6 +62,7 @@ Changes
 - display ``bdajax.message`` with traceback if ``ajaxaction`` throws uncaught
   exception
   [rnix]
+
 
 1.2
 ---
