@@ -5,7 +5,7 @@
   <include package="bdajax" />
   <include package="plone.app.jquerytools" />
   <include file="profile.zcml" />
-  
+
   <!-- bdajax DOM elements -->
   <browser:viewlet
     for="*"
@@ -13,9 +13,8 @@
     manager="plone.app.layout.viewlets.interfaces.IPortalTop"
     template="bda.ajax.pt"
     permission="zope.Public"
-    layer="bda.plone.ajax.interfaces.IAjaxLayer"
-  />
-  
+    layer="bda.plone.ajax.interfaces.IAjaxLayer" />
+
   <!-- ajax view expected by bdajax for action performing -->
   <browser:page
     for="*"
@@ -23,7 +22,6 @@
     class=".action.Action"
     attribute="ajaxaction"
     permission="zope.Public"
-    layer="bda.plone.ajax.interfaces.IAjaxLayer"
-  />
+    layer="bda.plone.ajax.interfaces.IAjaxLayer" />
 
 </configure>

@@ -15,7 +15,7 @@ from .utils import format_traceback
 
 
 class Action(BrowserView):
-    
+
     def continuation(self, ret):
         continuation = self.request.get('bda.plone.ajax.continuation')
         if continuation:
@@ -23,7 +23,7 @@ class Action(BrowserView):
         else:
             continuation = False
         ret['continuation'] = continuation
-    
+
     def ajaxaction(self):
         """Ajaxaction view, expected by bdajax contract.
         

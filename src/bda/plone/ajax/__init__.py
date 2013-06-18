@@ -8,7 +8,7 @@ from .utils import format_traceback
 
 def ajax_continue(request, continuation):
     """Set ajax continuation on request.
-    
+
     ``continuation``
         list of continuation definition objects or single continuation
         definition.
@@ -39,7 +39,7 @@ def ajax_status_message(request, payload):
 class AjaxAction(object):
     """Ajax action continuation definition.
     """
-    
+
     def __init__(self, target, name, mode, selector):
         self.target = target
         self.name = name
@@ -50,7 +50,7 @@ class AjaxAction(object):
 class AjaxEvent(object):
     """Ajax event continuation definition.
     """
-    
+
     def __init__(self, target, name, selector):
         self.target = target
         self.name = name
@@ -60,7 +60,7 @@ class AjaxEvent(object):
 class AjaxMessage(object):
     """Ajax message continuation definition.
     """
-    
+
     def __init__(self, payload, flavor, selector):
         self.payload = payload
         self.flavor = flavor
@@ -71,7 +71,7 @@ class AjaxOverlay(object):
     """Ajax overlay configuration. Used to display or close overlays on client
     side.
     """
-    
+
     def __init__(self, selector='#ajax-overlay', action=None, target=None,
                  close=False, content_selector='.overlay_content'):
         self.selector = selector
@@ -85,10 +85,10 @@ class AjaxContinue(object):
     """Convert ``AjaxAction``, ``AjaxEvent`` and ``AjaxMessage`` instances to
     JSON response definitions for bdajax continuation.
     """
-    
+
     def __init__(self, continuation):
         self.continuation = continuation
-    
+
     @property
     def definitions(self):
         """Continuation definitions as list of dicts for JSON serialization.
@@ -129,7 +129,7 @@ class AjaxContinue(object):
                     'close': definition.close,
                 })
         return continuation
-    
+
     def dump(self):
         """Return a JSON dump of continuation definitions.
         """
@@ -142,11 +142,11 @@ class AjaxContinue(object):
 class AjaxFormContinue(AjaxContinue):
     """Ajax form continuation computing. Used by ``render_ajax_form``.
     """
-    
+
     def __init__(self, result, continuation):
         self.result = result
         AjaxContinue.__init__(self, continuation)
-    
+
     @property
     def form(self):
         """Return rendered form tile result if no continuation actions.
@@ -154,7 +154,7 @@ class AjaxFormContinue(AjaxContinue):
         if not self.continuation:
             return self.result
         return ''
-    
+
     @property
     def next(self):
         """Return 'false' if no continuation actions, otherwise a JSON dump of
@@ -192,7 +192,7 @@ ajax_form_template = """\
 
 def render_ajax_form(context, request, name):
     """Render ajax form.
-    
+
     XXX: test
     """
     try:
