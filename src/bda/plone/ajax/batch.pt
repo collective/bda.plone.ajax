@@ -5,12 +5,12 @@
      tal:omit-tag="">
 
   <div tal:condition="view/display"
-       class="pretty_batch">
+       class="batch">
 
     <tal:fistpage
         define="firstpage view/firstpage;
                 invisible python:not firstpage['visible'] or firstpage['current'];
-                css string:ui-corner-tl ui-corner-bl ui-state-default;
+                css string:page;
                 css python:invisible and css + ' invisible' or css"
         condition="firstpage">
 
@@ -35,7 +35,7 @@
     <tal:prevpage
         define="prevpage view/prevpage;
                 invisible python:not prevpage['visible'] or prevpage['current'];
-                css string:ui-state-default;
+                css string:page;
                 css python:invisible and css + ' invisible' or css"
         condition="prevpage">
 
@@ -63,7 +63,7 @@
         <tal:page
             define="invisible not:page/visible;
                     current page/current;
-                    css string:ui-state-default;
+                    css string:page;
                     css python:invisible and css + ' invisible' or css;
                     css python:current and css + ' current' or css">
 
@@ -91,7 +91,7 @@
     <tal:nextpage
         define="nextpage view/nextpage;
                 invisible python:not nextpage['visible'] or nextpage['current'];
-                css string:ui-state-default;
+                css string:page;
                 css python:invisible and css + ' invisible' or css"
         condition="nextpage">
 
@@ -116,7 +116,7 @@
     <tal:lastpage
         define="lastpage view/lastpage;
                 invisible python:not lastpage['visible'] or lastpage['current'];
-                css string:ui-corner-tr ui-corner-br ui-state-default;
+                css string:page;
                 css python:invisible and css + ' invisible' or css"
         condition="lastpage">
 
