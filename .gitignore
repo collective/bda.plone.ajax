@@ -1,4 +1,5 @@
 *.pyc
 *.pyo
+*.mo
 src/bda.plone.ajax.egg-info/
 dist/
