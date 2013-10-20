@@ -1,0 +1,143 @@
+<div xmlns:tal="http://xml.zope.org/namespaces/tal"
+     xmlns:ajax="http://namesspaces.bluedynamics.eu/ajax"
+     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+     i18n:domain="bda.plone.ajax"
+     tal:omit-tag="">
+
+  <div tal:condition="view/display"
+       class="pretty_batch">
+
+    <tal:fistpage
+        define="firstpage view/firstpage;
+                invisible python:not firstpage['visible'] or firstpage['current'];
+                css string:ui-corner-tl ui-corner-bl ui-state-default;
+                css python:invisible and css + ' invisible' or css"
+        condition="firstpage">
+
+      <a href="#"
+         ajax:bind="click"
+         ajax:target=""
+         ajax:event=""
+         tal:condition="not:invisible"
+         tal:attributes="href firstpage/url;
+                         class css;
+                         ajax:target firstpage/url;
+                         ajax:event string:batchclicked:.${view/batchname}sensitiv;"
+         i18n:translate="first">First</a>
+
+      <a href="javascript:void(0)"
+         tal:condition="invisible"
+         tal:attributes="class css"
+         i18n:translate="first">First</a>
+
+    </tal:fistpage>
+
+    <tal:prevpage
+        define="prevpage view/prevpage;
+                invisible python:not prevpage['visible'] or prevpage['current'];
+                css string:ui-state-default;
+                css python:invisible and css + ' invisible' or css"
+        condition="prevpage">
+
+      <a href="#"
+         ajax:bind="click"
+         ajax:target=""
+         ajax:event=""
+         tal:condition="not:invisible"
+         tal:attributes="href prevpage/url;
+                         class css;
+                         ajax:target prevpage/url;
+                         ajax:event string:batchclicked:.${view/batchname}sensitiv"
+         i18n:translate="previous">Previous</a>
+
+      <a href="javascript:void(0)"
+         tal:condition="invisible"
+         tal:attributes="class css"
+         i18n:translate="previous">Previous</a>
+
+    </tal:prevpage>
+
+    <span>
+
+      <tal:pages repeat="page view/pages">
+        <tal:page
+            define="invisible not:page/visible;
+                    current page/current;
+                    css string:ui-state-default;
+                    css python:invisible and css + ' invisible' or css;
+                    css python:current and css + ' current' or css">
+
+          <a href="#"
+             ajax:bind="click"
+             ajax:target=""
+             ajax:event=""
+             tal:condition="python:not invisible and not current"
+             tal:attributes="href page/url;
+                             class css;
+                             ajax:target page/url;
+                             ajax:event string:batchclicked:.${view/batchname}sensitiv"
+             tal:content="page/page">X</a>
+
+           <a href="javascript:void(0)"
+              tal:condition="python:invisible or current"
+              tal:attributes="class css"
+              tal:content="page/page">X</a>
+
+        </tal:page>
+      </tal:pages>
+
+    </span>
+
+    <tal:nextpage
+        define="nextpage view/nextpage;
+                invisible python:not nextpage['visible'] or nextpage['current'];
+                css string:ui-state-default;
+                css python:invisible and css + ' invisible' or css"
+        condition="nextpage">
+
+      <a href="#"
+         ajax:bind="click"
+         ajax:target=""
+         ajax:event=""
+         tal:condition="not:invisible"
+         tal:attributes="href nextpage/url;
+                         class css;
+                         ajax:target nextpage/url;
+                         ajax:event string:batchclicked:.${view/batchname}sensitiv"
+         i18n:translate="next">Next</a>
+
+      <a href="javascript:void(0)"
+         tal:condition="invisible"
+         tal:attributes="class css"
+         i18n:translate="next">Next</a>
+
+    </tal:nextpage>
+
+    <tal:lastpage
+        define="lastpage view/lastpage;
+                invisible python:not lastpage['visible'] or lastpage['current'];
+                css string:ui-corner-tr ui-corner-br ui-state-default;
+                css python:invisible and css + ' invisible' or css"
+        condition="lastpage">
+
+      <a href="#"
+         ajax:bind="click"
+         ajax:target=""
+         ajax:event=""
+         tal:condition="not:invisible"
+         tal:attributes="href lastpage/url;
+                         class css;
+                         ajax:target lastpage/url;
+                         ajax:event string:batchclicked:.${view/batchname}sensitiv"
+         i18n:translate="last">Last</a>
+
+      <a href="javascript:void(0)"
+         tal:condition="invisible"
+         tal:attributes="class css"
+         i18n:translate="last">Last</a>
+
+    </tal:lastpage>
+
+  </div>
+
+</div>

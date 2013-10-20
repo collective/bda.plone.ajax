@@ -34,6 +34,12 @@ Contributors
 Changes
 =======
 
+1.4
+---
+
+- Add abstract batch for buidling ajax batches
+  [rnix, 2013-10-20]
+
 
 1.3
 ---
