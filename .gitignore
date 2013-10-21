@@ -3,3 +3,13 @@
 *.mo
 src/bda.plone.ajax.egg-info/
 dist/
+.installed.cfg
+.mr.developer.cfg
+.project
+.pydevproject
+bin/
+develop-eggs/
+devsrc/
+parts/
+vpython/
+
