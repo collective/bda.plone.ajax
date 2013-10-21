@@ -5,16 +5,16 @@
        style="background-color:#61ff68;"
        ajax:bind="altertile"
        ajax:action="bdajax_example_tile_a:.tile_b:replace">
-    
+
     <h3>I am tile B</h3>
-    
+
     <!-- bind element to click event and trigger custom event -->
     <a href=""
        ajax:bind="click"
        ajax:event="altertile:.tile_b"
        ajax:target=""
        tal:attributes="ajax:target context/absolute_url">alter me</a>
-    
+
   </div>
 
 </div>

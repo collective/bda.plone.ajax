@@ -7,23 +7,36 @@
     name="bdajax_example_view"
     template="ploneview.pt"
     permission="zope2.View"
-    layer="bda.plone.ajax.interfaces.IAjaxLayer"
-  />
-  
+    layer="bda.plone.ajax.interfaces.IAjaxLayer" />
+
   <!-- tile as browser page -->
   <browser:page
     for="*"
     name="bdajax_example_tile_a"
     template="tile_a.pt"
     permission="zope2.View"
-    layer="bda.plone.ajax.interfaces.IAjaxLayer"
-  />
-  
+    layer="bda.plone.ajax.interfaces.IAjaxLayer" />
+
   <!-- tile as content provider -->
   <adapter
     name="bdajax_example_tile_b"
     provides="zope.contentprovider.interfaces.IContentProvider"
-    factory=".provider.Provider"
-  />
-  
+    factory=".provider.Provider" />
+
+  <!-- example batch implementation -->
+  <browser:page
+    for="*"
+    name="bdajax_example_batch"
+    template="batchview.pt"
+    permission="zope2.View"
+    layer="bda.plone.ajax.interfaces.IAjaxLayer" />
+
+  <browser:page
+    for="*"
+    name="bdajax_example_batched_result"
+    class=".examplebatch.BatchedResult"
+    template="batchedresult.pt"
+    permission="zope2.View"
+    layer="bda.plone.ajax.interfaces.IAjaxLayer" />
+
 </configure>

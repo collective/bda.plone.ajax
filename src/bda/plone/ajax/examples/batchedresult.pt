@@ -1,0 +1,19 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xml:lang="en"
+     xmlns:tal="http://xml.zope.org/namespaces/tal"
+     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+     i18n:domain="bda.plone.ajax"
+     class="examplebatchsensitiv"
+     ajax:bind="batchclicked"
+     tal:attributes="ajax:target context/absolute_url;
+                     ajax:action string:bdajax_example_batched_result:.examplebatchsensitiv:replace">
+
+  <tal:listingbatch replace="structure view/batch" />
+
+  <ul>
+    <li tal:repeat="item view/slice" tal:content="item">x</li>
+  </ul>
+
+  <tal:listingbatch replace="structure view/batch" />
+
+</div>

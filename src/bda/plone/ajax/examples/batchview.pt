@@ -10,7 +10,7 @@
   <metal:main fill-slot="main">
     <tal:main-macro metal:define-macro="main">
 
-      <tal:tile replace="structure context/@@bdajax_example_tile_a" />
+      <tal:tile replace="structure context/@@bdajax_example_batched_result" />
 
     </tal:main-macro>
   </metal:main>

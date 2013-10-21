@@ -3,16 +3,16 @@
   <!-- the tile -->
   <div class="tile_a"
        style="background-color:#ffc261;">
-    
+
     <h3>I am tile A</h3>
-    
+
     <!-- perform action directly -->
     <a href=""
        ajax:bind="click"
        ajax:action="bdajax_example_tile_b:.tile_a:replace"
        ajax:target=""
        tal:attributes="ajax:target context/absolute_url">alter me</a>
-    
+
   </div>
 
 </div>
