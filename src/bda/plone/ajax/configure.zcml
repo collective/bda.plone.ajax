@@ -4,7 +4,11 @@
 
   <i18n:registerTranslations directory="locales" />
 
-  <include package=".examples" />
+  <!-- include examples package in order to enable examples. -->
+  <!--
+    <include package=".examples" />
+  -->
+
   <include package="bdajax" />
   <include package="plone.app.jquerytools" />
   <include file="profile.zcml" />

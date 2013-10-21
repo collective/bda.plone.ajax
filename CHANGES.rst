@@ -4,6 +4,12 @@ Changes
 1.4 (unreleased)
 ----------------
 
+- Cleanup docs.
+  [rnix, 2013-10-21]
+
+- Do not load examples by default.
+  [rnix, 2013-10-21]
+
 - Add abstract batch for buidling ajax batches.
   [rnix, 2013-10-20]
 

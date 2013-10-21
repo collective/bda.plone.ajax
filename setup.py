@@ -6,7 +6,7 @@ from setuptools import (
 
 
 version = '1.4dev'
-shortdesc ="bdajax integration for Plone."
+shortdesc ="``bdajax`` integration for Plone."
 longdesc = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
 longdesc += open(os.path.join(os.path.dirname(__file__), 'CHANGES.rst')).read()
 longdesc += open(os.path.join(os.path.dirname(__file__), 'LICENSE.rst')).read()
