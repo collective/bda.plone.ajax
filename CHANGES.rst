@@ -1,8 +1,8 @@
 Changes
 =======
 
-1.4 (unreleased)
-----------------
+1.4
+---
 
 - Cleanup docs.
   [rnix, 2013-10-21]
