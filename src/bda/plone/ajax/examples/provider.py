@@ -1,13 +1,9 @@
 from Acquisition import Explicit
-from zope.interface import (
-    Interface,
-    implementer,
-)
+from zope.interface import Interface
+from zope.interface import implementer
 from zope.component import adapter
-from zope.publisher.interfaces.browser import (
-    IBrowserRequest,
-    IBrowserView,
-)
+from zope.publisher.interfaces.browser import IBrowserRequest
+from zope.publisher.interfaces.browser import IBrowserView
 from zope.contentprovider.interfaces import IContentProvider
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from bda.plone.ajax import ajax_message
