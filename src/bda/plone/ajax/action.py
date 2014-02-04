@@ -7,9 +7,10 @@ from zope.component import getMultiAdapter
 from zope.component.interfaces import ComponentLookupError
 from zope.contentprovider.interfaces import IContentProvider
 from Products.Five import BrowserView
-from bda.plone.ajax import AjaxContinue
-from bda.plone.ajax import AjaxMessage
 from .utils import format_traceback
+from . import AjaxContinue
+from . import AjaxMessage
+
 
 
 class Action(BrowserView):

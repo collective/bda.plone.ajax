@@ -191,12 +191,14 @@ ajax_form_template = """\
 
 
 def render_ajax_form(context, request, name):
-    """Render ajax form.
+    """Render ajax form on context by view name.
 
-    XXX: test
+    By default contents of div with id ``content`` gets replaced. If fiddle
+    mode or selector needs to get customized, ``bda.plone.ajax.form.mode``
+    and ``bda.plone.ajax.form.selector`` must be given as request parameters.
     """
     try:
-        result = context.restrictedTarverse(name)
+        result = context.restrictedTraverse(name)()
         selector = request.get('bda.plone.ajax.form.selector', '#content')
         mode = request.get('bda.plone.ajax.form.mode', 'inner')
         continuation = request.get('bda.plone.ajax.continuation')

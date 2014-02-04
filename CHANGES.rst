@@ -1,6 +1,13 @@
 Changes
 =======
 
+1.5dev
+------
+
+- Add ajaxform convenience browser page.
+  [rnix, 2014-02-04]
+
+
 1.4
 ---
 

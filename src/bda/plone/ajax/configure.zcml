@@ -20,7 +20,7 @@
     manager="plone.app.layout.viewlets.interfaces.IPortalTop"
     template="bda.ajax.pt"
     permission="zope.Public"
-    layer="bda.plone.ajax.interfaces.IAjaxLayer" />
+    layer=".interfaces.IAjaxLayer" />
 
   <!-- ajax view expected by bdajax for action performing -->
   <browser:page
@@ -29,6 +29,14 @@
     class=".action.Action"
     attribute="ajaxaction"
     permission="zope.Public"
-    layer="bda.plone.ajax.interfaces.IAjaxLayer" />
+    layer=".interfaces.IAjaxLayer" />
+
+  <!-- view for rendering ajax forms -->
+  <browser:page
+    for="*"
+    name="ajaxform"
+    class=".form.AjaxForm"
+    permission="zope.Public"
+    layer=".interfaces.IAjaxLayer" />
 
 </configure>

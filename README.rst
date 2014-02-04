@@ -163,6 +163,12 @@ Now start instance and navigate to ``@@bdajax_example_view``. You get initially
 equates the one contained in examples folder.
 
 
+Implement an ajax form
+----------------------
+
+XXX
+
+
 Implement ajaxified batch
 -------------------------
 
