@@ -140,20 +140,8 @@ class AjaxContinue(object):
 
 
 class AjaxFormContinue(AjaxContinue):
-    """Ajax form continuation computing. Used by ``render_ajax_form``.
+    """Used by ``render_ajax_form``.
     """
-
-    def __init__(self, result, continuation):
-        self.result = result
-        AjaxContinue.__init__(self, continuation)
-
-    @property
-    def form(self):
-        """Return rendered form tile result if no continuation actions.
-        """
-        if not self.continuation:
-            return self.result
-        return ''
 
     @property
     def next(self):
@@ -202,10 +190,9 @@ def render_ajax_form(context, request, name):
         selector = request.get('bda.plone.ajax.form.selector', '#content')
         mode = request.get('bda.plone.ajax.form.mode', 'inner')
         continuation = request.get('bda.plone.ajax.continuation')
-        form_continue = AjaxFormContinue(result, continuation)
-        rendered_form = form_continue.form
+        form_continue = AjaxFormContinue(continuation)
         response = ajax_form_template % {
-            'form': rendered_form,
+            'form': result,
             'selector': selector,
             'mode': mode,
             'next': form_continue.next,
@@ -217,9 +204,9 @@ def render_ajax_form(context, request, name):
         mode = request.get('bda.plone.ajax.form.mode', 'inner')
         tb = format_traceback()
         continuation = AjaxMessage(tb, 'error', None)
-        form_continue = AjaxFormContinue(result, [continuation])
+        form_continue = AjaxFormContinue([continuation])
         response = ajax_form_template % {
-            'form': form_continue.form.replace(u'\n', u' '), # XXX: why replace
+            'form': result,
             'selector': selector,
             'mode': mode,
             'next': form_continue.next,

@@ -1,0 +1,24 @@
+<form xmlns:ajax="http://namesspaces.bluedynamics.eu/ajax"
+      id="example_ajaxform"
+      action=""
+      method="post"
+      enctype="multipart/form-data"
+      ajax:form="True"
+      tal:define="error view/error"
+      tal:attributes="action view/form_action">
+
+  <label for="field">Field</label>
+
+  <div tal:condition="error"
+       tal:content="error"
+       style="font-weight:bold;color:red;">
+    Error Text
+  </div>
+
+  <input type="text"
+         name="field"
+         tal:attributes="value view/value" />
+
+  <input type="submit" name="submit" value="Submit" />
+
+</form>

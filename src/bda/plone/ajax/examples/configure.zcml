@@ -7,7 +7,7 @@
     name="bdajax_example_view"
     template="ploneview.pt"
     permission="zope2.View"
-    layer="bda.plone.ajax.interfaces.IAjaxLayer" />
+    layer="..interfaces.IAjaxLayer" />
 
   <!-- tile as browser page -->
   <browser:page
@@ -15,7 +15,7 @@
     name="bdajax_example_tile_a"
     template="tile_a.pt"
     permission="zope2.View"
-    layer="bda.plone.ajax.interfaces.IAjaxLayer" />
+    layer="..interfaces.IAjaxLayer" />
 
   <!-- tile as content provider -->
   <adapter
@@ -23,13 +23,47 @@
     provides="zope.contentprovider.interfaces.IContentProvider"
     factory=".provider.Provider" />
 
+  <!-- plone view integrating ajax form -->
+  <browser:page
+    for="*"
+    name="bdajax_example_form_view"
+    template="ajaxformview.pt"
+    permission="zope2.View"
+    layer="..interfaces.IAjaxLayer" />
+
+  <!-- example ajax form -->
+  <browser:page
+    for="*"
+    name="bdajax_example_form"
+    class=".ajaxform.AjaxForm"
+    template="ajaxform.pt"
+    permission="zope2.View"
+    layer="..interfaces.IAjaxLayer" />
+
+  <!-- plone view integrating link to ajax overlay form -->
+  <browser:page
+    for="*"
+    name="bdajax_example_overlay_form_view"
+    template="ajaxoverlayformview.pt"
+    permission="zope2.View"
+    layer="..interfaces.IAjaxLayer" />
+
+  <!-- example overlay form -->
+  <browser:page
+    for="*"
+    name="bdajax_example_overlay_form"
+    class=".ajaxform.AjaxOverlayForm"
+    template="ajaxform.pt"
+    permission="zope2.View"
+    layer="..interfaces.IAjaxLayer" />
+
   <!-- example batch implementation -->
   <browser:page
     for="*"
     name="bdajax_example_batch"
     template="batchview.pt"
     permission="zope2.View"
-    layer="bda.plone.ajax.interfaces.IAjaxLayer" />
+    layer="..interfaces.IAjaxLayer" />
 
   <browser:page
     for="*"
@@ -37,6 +71,6 @@
     class=".examplebatch.BatchedResult"
     template="batchedresult.pt"
     permission="zope2.View"
-    layer="bda.plone.ajax.interfaces.IAjaxLayer" />
+    layer="..interfaces.IAjaxLayer" />
 
 </configure>

@@ -135,8 +135,7 @@ need to wrap this inside a plone view. Create template ``ploneview.pt``::
           xmlns:metal="http://xml.zope.org/namespaces/metal"
           xmlns:i18n="http://xml.zope.org/namespaces/i18n"
           lang="en"
-          metal:use-macro="here/main_template/macros/master"
-          i18n:domain="bda.plone.ajax">
+          metal:use-macro="here/main_template/macros/master">
     <body>
 
       <metal:main fill-slot="main">
@@ -166,7 +165,108 @@ equates the one contained in examples folder.
 Implement an ajax form
 ----------------------
 
-XXX
+Create a view which renders a form.
+
+Create template named ``ajaxform.pt``. The attribute ``ajax:form`` tells
+bdajax to handle this form::
+
+    <form xmlns:ajax="http://namesspaces.bluedynamics.eu/ajax"
+          id="example_ajaxform"
+          method="post"
+          enctype="multipart/form-data"
+          ajax:form="True"
+          tal:define="error view/error"
+          tal:attributes="action view/form_action">
+
+      <label for="field">Field</label>
+
+      <div tal:condition="error"
+           tal:content="error"
+           style="font-weight:bold;color:red;">
+        Error Text
+      </div>
+
+      <input type="text"
+             name="field"
+             tal:attributes="value view/value" />
+
+      <input type="submit" name="submit" value="Submit" />
+
+    </form>
+
+Create the view class::
+
+    from Products.Five import BrowserView
+    from bda.plone.ajax import ajax_continue
+    from bda.plone.ajax import ajax_form_fiddle
+    from bda.plone.ajax import AjaxMessage
+
+
+    class AjaxForm(BrowserView):
+
+        @property
+        def form_action(self):
+            return 'ajaxform?form_name=bdajax_example_form'
+
+        @property
+        def submitted(self):
+            return 'field' in self.request.form
+
+        @property
+        def error(self):
+            if not self.submitted:
+                return
+            if not self.request.form['field']:
+                return u'Field must not be empty'
+
+        @property
+        def value(self):
+            return self.request.form.get('field')
+
+        def __call__(self):
+            if self.submitted and not self.error:
+                ajax_continue(self.request, AjaxMessage('Success!', 'info', None))
+            return super(AjaxForm, self).__call__()
+
+Register view via ZCML::
+
+    <browser:page
+      for="*"
+      name="bdajax_example_form"
+      class=".AjaxForm"
+      template="ajaxform.pt"
+      permission="zope2.View" />
+
+Create wrapper view for form named ``ajaxformview.pt``::
+
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+          xmlns:tal="http://xml.zope.org/namespaces/tal"
+          xmlns:metal="http://xml.zope.org/namespaces/metal"
+          xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+          lang="en"
+          metal:use-macro="here/main_template/macros/master">
+    <body>
+
+      <metal:main fill-slot="main">
+        <tal:main-macro metal:define-macro="main">
+
+          <tal:tile replace="structure context/@@bdajax_example_form" />
+
+        </tal:main-macro>
+      </metal:main>
+
+    </body>
+    </html>
+
+And register via ZCML::
+
+    <browser:page
+      for="*"
+      name="bdajax_example_form_view"
+      template="ajaxformview.pt"
+      permission="zope2.View" />
+
+Now start instance and navigate to ``@@bdajax_example_form_view``.
 
 
 Implement ajaxified batch
