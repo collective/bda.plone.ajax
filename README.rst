@@ -53,7 +53,7 @@ Configure via ZCML::
       permission="zope2.View" />
 
 
-Implement Ajax Action as content provider
+Implement ajax action as content provider
 -----------------------------------------
 
 Create a template ``tile_b.pt`` containing the markup::
@@ -269,8 +269,8 @@ And register via ZCML::
 Now start instance and navigate to ``@@bdajax_example_form_view``.
 
 
-Implement ajaxified batch
--------------------------
+Implement ajax batch
+--------------------
 
 Create a batch implementation in python, i.e. ``examplebatch.py`` calculating
 batch vocab::
