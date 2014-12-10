@@ -1,6 +1,16 @@
 Changes
 =======
 
+1.6 (unreleased)
+----------------
+
+- Disable diazo theming in ``ajaxaction`` and ``ajaxform`` browser views.
+  [rnix, 2014-12-10]
+
+- Add ``AjaxPath`` continuation. Can be used as of ``bdajax`` 1.6.
+  [rnix, 2014-12-10]
+
+
 1.5
 ---
 

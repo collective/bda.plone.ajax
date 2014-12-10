@@ -12,7 +12,6 @@ from . import AjaxContinue
 from . import AjaxMessage
 
 
-
 class Action(BrowserView):
 
     def continuation(self, ret):
@@ -25,11 +24,12 @@ class Action(BrowserView):
 
     def ajaxaction(self):
         """Ajaxaction view, expected by bdajax contract.
-        
+
         This view tries to lookup action by restricted traverse first, if not
         found, it tries to lookup contentprovider by action name. If this fails
         an error is raised.
         """
+        self.request.response.setHeader('X-Theme-Disabled', 'True')
         try:
             mode = self.request.get('bdajax.mode')
             selector = self.request.get('bdajax.selector')

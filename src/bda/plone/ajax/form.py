@@ -12,6 +12,7 @@ class AjaxForm(BrowserView):
         Expects request param ``form_name`` on request. Form name maps to a
         browser view rendering the form.
         """
+        self.request.response.setHeader('X-Theme-Disabled', 'True')
         return render_ajax_form(self.context,
                                 self.request,
                                 self.request.get('form_name', 'NO_FORM_NAME'))
