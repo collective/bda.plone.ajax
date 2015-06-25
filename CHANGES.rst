@@ -4,6 +4,12 @@ Changes
 1.6 (unreleased)
 ----------------
 
+- give ``ajaxaction`` response explicit ``Content-Type: application/json``
+  [jensens, 2015-06-25]
+
+- log formerly catched and hidden exceptions with severity error to error log.
+  [jensens, 2015-06-25]
+
 - Disable diazo theming in ``ajaxaction`` and ``ajaxform`` browser views.
   [rnix, 2014-12-10]
 

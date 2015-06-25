@@ -1,25 +1,26 @@
+# -*- coding: utf-8 -*-
+from bda.plone.ajax import AjaxContinue
+from bda.plone.ajax import AjaxMessage
+from bda.plone.ajax.utils import format_traceback
+from Products.Five import BrowserView
+from zope.component import getMultiAdapter
+from zope.contentprovider.interfaces import IContentProvider
+import logging
+
 try:
     import json
 except ImportError:
     import simplejson as json
-import logging
-from zope.component import getMultiAdapter
-from zope.component.interfaces import ComponentLookupError
-from zope.contentprovider.interfaces import IContentProvider
-from Products.Five import BrowserView
-from .utils import format_traceback
-from . import AjaxContinue
-from . import AjaxMessage
+
+logger = logging.getLogger(__name__)
 
 
 class Action(BrowserView):
 
     def continuation(self, ret):
-        continuation = self.request.get('bda.plone.ajax.continuation')
+        continuation = self.request.get('bda.plone.ajax.continuation', False)
         if continuation:
             continuation = AjaxContinue(continuation).definitions
-        else:
-            continuation = False
         ret['continuation'] = continuation
 
     def ajaxaction(self):
@@ -30,6 +31,10 @@ class Action(BrowserView):
         an error is raised.
         """
         self.request.response.setHeader('X-Theme-Disabled', 'True')
+        self.request.response.setHeader(
+            'Content-Type',
+            'application/json; charset=utf-8'
+        )
         try:
             mode = self.request.get('bdajax.mode')
             selector = self.request.get('bdajax.selector')
@@ -52,7 +57,8 @@ class Action(BrowserView):
             ret['payload'] = renderer.render()
             self.continuation(ret)
             return json.dumps(ret)
-        except Exception:
+        except Exception, e:
+            logger.exception(e)
             tb = format_traceback()
             continuation = AjaxContinue(
                 [AjaxMessage(tb, 'error', None)]).definitions
