@@ -1,7 +1,7 @@
 Changes
 =======
 
-1.6 (unreleased)
+1.6 (2015-06-25)
 ----------------
 
 - give ``ajaxaction`` response explicit ``Content-Type: application/json``
