@@ -1,9 +1,9 @@
-import types
+# -*- coding: utf-8 -*-
 try:
     import json
 except ImportError:
     import simplejson as json
-from .utils import format_traceback
+from bda.plone.ajax.utils import format_traceback
 
 
 def ajax_continue(request, continuation):
@@ -15,7 +15,7 @@ def ajax_continue(request, continuation):
     """
     if request.get('bda.plone.ajax.continuation', None) is None:
         request['bda.plone.ajax.continuation'] = list()
-    if type(continuation) is types.ListType:
+    if isinstance(continuation, list):
         existent = request['bda.plone.ajax.continuation']
         request['bda.plone.ajax.continuation'] = existent + continuation
     else:
@@ -33,7 +33,7 @@ def ajax_status_message(request, payload):
     """Convenience to add ajax status message definition to ajax continuation
     definitions.
     """
-    ajax_continue(request, AjaxMessage(payload, None, '#status_message'))  
+    ajax_continue(request, AjaxMessage(payload, None, '#status_message'))
 
 
 class AjaxPath(object):

@@ -1,5 +1,6 @@
+# -*- coding: utf-8 -*-
 from Products.Five import BrowserView
-from . import render_ajax_form
+from bda.plone.ajax import render_ajax_form
 
 
 class AjaxForm(BrowserView):
