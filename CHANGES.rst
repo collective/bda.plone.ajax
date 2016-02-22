@@ -4,7 +4,8 @@ Changes
 1.7 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Plone 5 Update, AMD Compatibility
+  [agitator]
 
 
 1.6 (2015-06-25)
