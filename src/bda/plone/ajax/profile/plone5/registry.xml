@@ -2,13 +2,31 @@
 <registry xmlns:i18n="http://xml.zope.org/namespaces/i18n"
           i18n:domain="bda.plone.ajax">
 
-  <!-- create a bundle definition -->
-  <records prefix="plone.bundles/bdajax-bundle"
-            interface='Products.CMFPlone.interfaces.IBundleRegistry'>
-    <value key="enabled">True</value>
-    <value key="jscompilation">++resource++bdajax/bdajax.js</value>
-    <value key="csscompilation">++resource++bdajax/bdajax.css</value>
-    <value key="last_compilation">2016-02-28 00:00:00</value>
+
+  <records prefix="plone.resources/bdajax"
+            interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+      <value key="js">++resource++bdajax/bdajax.js</value>
+      <value key="css">
+        <element>++resource++bdajax/bdajax.css</element>
+      </value>
   </records>
+
+  <records prefix="plone.resources/bda-plone-ajax"
+            interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+      <value key="js">++resource++plone-bda-bdajax/bdajax-init.js</value>
+  </records>
+
+
+  <records prefix="plone.bundles/bda-plone-ajax-bundle"
+            interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+    <value key="resources">
+      <element>bdajax</element>
+      <element>bda-plone-ajax</element>
+    </value>
+    <value key="enabled">True</value>
+    <value key="compile">True</value>
+    <value key="jscompilation">++resource++bda-plone-ajax-bundle-compiled.js</value>
+    <value key="last_compilation">2016-03-01 12:00:00</value>
+   </records>
 
 </registry>
