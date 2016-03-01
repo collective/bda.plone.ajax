@@ -6,26 +6,31 @@
   <include package="Products.GenericSetup" file="meta.zcml" />
 
   <genericsetup:registerProfile
-      zcml:condition="not-have plone-5"
-      name="default"
-      title="bda.plone.ajax"
-      directory="profile/plone4"
-      description="Extension profile for bda.plone.ajax."
-      provides="Products.GenericSetup.interfaces.EXTENSION" />
+    zcml:condition="not-have plone-5"
+    name="default"
+    title="bda.plone.ajax"
+    directory="profile/plone4"
+    description="Extension profile for bda.plone.ajax."
+    provides="Products.GenericSetup.interfaces.EXTENSION" />
 
   <genericsetup:registerProfile
-      zcml:condition="have plone-5"
-      name="default"
-      title="bda.plone.ajax"
-      directory="profile/plone5"
-      description="Extension profile for bda.plone.ajax."
-      provides="Products.GenericSetup.interfaces.EXTENSION" />
+    zcml:condition="have plone-5"
+    name="default"
+    title="bda.plone.ajax"
+    directory="profile/plone5"
+    description="Extension profile for bda.plone.ajax."
+    provides="Products.GenericSetup.interfaces.EXTENSION" />
 
   <genericsetup:registerProfile
-      name="base"
-      title="bda.plone.ajax:base"
-      directory="profile/base"
-      description="Base extension profile for bda.plone.ajax."
-      provides="Products.GenericSetup.interfaces.EXTENSION" />
+    name="install-base"
+    title="bda.plone.ajax:base"
+    directory="profile/base"
+    description="Base extension profile for bda.plone.ajax."
+    provides="Products.GenericSetup.interfaces.EXTENSION" />
+
+
+  <!-- Hide profiles/products from Quick Installer -->
+  <utility factory=".setuphandlers.HiddenProfiles" name="bda.plone.ajax" />
+  <utility factory=".setuphandlers.HiddenProducts" name="bda.plone.ajax" />
 
 </configure>

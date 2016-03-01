@@ -2,6 +2,6 @@
 <metadata>
   <version>1000</version>
   <dependencies>
-    <dependency>profile-bda.plone.ajax:base</dependency>
+    <dependency>profile-bda.plone.ajax:install-base</dependency>
   </dependencies>
 </metadata>
