@@ -9,7 +9,6 @@ if(window.jQuery){
   });
 }
 
-
 require([
   'jquery',
   'bdajax',
@@ -25,11 +24,6 @@ require([
     $(document).bdajax();
     // /XXX
 
-
-
   });
-
-
-
 
 });
