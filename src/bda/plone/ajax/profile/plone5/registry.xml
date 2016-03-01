@@ -13,7 +13,7 @@
 
   <records prefix="plone.resources/bda-plone-ajax"
             interface='Products.CMFPlone.interfaces.IResourceRegistry'>
-      <value key="js">++resource++plone-bda-bdajax/bdajax-init.js</value>
+      <value key="js">++resource++bda-plone-bdajax/init.js</value>
   </records>
 
 

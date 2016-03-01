@@ -17,7 +17,7 @@
   <!-- Plone specific -->
   <browser:resourceDirectory
     zcml:condition="installed Products.CMFPlone"
-    name="plone-bda-bdajax"
+    name="bda-plone-bdajax"
     directory="static" />
 
 
