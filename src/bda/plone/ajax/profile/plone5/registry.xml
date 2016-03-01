@@ -25,6 +25,7 @@
     </value>
     <value key="enabled">True</value>
     <value key="jscompilation">++resource++bda-plone-bdajax/bda-plone-ajax-bundle-compiled.js</value>
+    <value key="csscompilation">++resource++bdajax/bdajax.css</value>
     <value key="last_compilation">2016-03-01 12:00:00</value>
    </records>
 
