@@ -1,17 +1,25 @@
 <configure xmlns="http://namespaces.zope.org/zope"
            xmlns:i18n="http://namespaces.zope.org/i18n"
+           xmlns:zcml="http://namespaces.zope.org/zcml"
            xmlns:browser="http://namespaces.zope.org/browser">
 
   <i18n:registerTranslations directory="locales" />
 
   <!-- include examples package in order to enable examples. -->
-  <!--
+
     <include package=".examples" />
-  -->
+
 
   <include package="bdajax" />
   <include package="plone.app.jquerytools" />
   <include file="profile.zcml" />
+
+  <!-- Plone specific -->
+  <browser:resourceDirectory
+    zcml:condition="installed Products.CMFPlone"
+    name="plone-bda-bdajax"
+    directory="static" />
+
 
   <!-- bdajax DOM elements -->
   <browser:viewlet
