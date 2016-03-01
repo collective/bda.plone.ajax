@@ -9,7 +9,7 @@ class HiddenProfiles(object):
 
     def getNonInstallableProfiles(self):
         """Do not show on Plone's list of installable profiles."""
-        return ['bda.plone.ajax:base',
+        return ['bda.plone.ajax:install-base',
                 ]
 
 
@@ -18,5 +18,5 @@ class HiddenProducts(object):
 
     def getNonInstallableProducts(self):
         """Do not show on QuickInstaller's list of installable products."""
-        return ['bda.plone.ajax:base',
+        return ['bda.plone.ajax:install-base',
                 ]
