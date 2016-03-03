@@ -11,6 +11,11 @@
       </value>
   </records>
 
+  <records prefix="plone.resources/bdajax-overlay"
+            interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+      <value key="js">++resource++bdajax/overlay.js</value>
+  </records>
+
   <records prefix="plone.resources/bda-plone-ajax"
             interface='Products.CMFPlone.interfaces.IResourceRegistry'>
       <value key="js">++resource++bda-plone-bdajax/init.js</value>

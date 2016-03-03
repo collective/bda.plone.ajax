@@ -12,18 +12,15 @@ if(window.jQuery){
 require([
   'jquery',
   'bdajax',
+  'bdajax-overlay',
   ], function($,
               bdajax
               ){
   'use strict';
 
   $(document).ready(function(){
-
-    // XXX this mus be wrapped in a document ready
     bdajax.spinner.hide();
     $(document).bdajax();
-    // /XXX
-
   });
 
 });
