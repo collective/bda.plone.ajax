@@ -12,7 +12,7 @@ if(window.jQuery){
 require([
   'jquery',
   'bdajax',
-  'bdajax-overlay',
+  // 'bdajax-overlay',
   ], function($,
               bdajax
               ){
