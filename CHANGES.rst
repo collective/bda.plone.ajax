@@ -4,7 +4,7 @@ Changes
 1.7 (unreleased)
 ----------------
 
-- Plone 5 Update, AMD Compatibility
+- Plone 5 Update, registered as legacy bundle
   [agitator]
 
 
