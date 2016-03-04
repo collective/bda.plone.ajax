@@ -2,6 +2,7 @@
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      xmlns:ajax="http://namesspaces.bluedynamics.eu/ajax"
       lang="en"
       metal:use-macro="here/main_template/macros/master"
       i18n:domain="bda.plone.ajax">
