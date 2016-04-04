@@ -5,7 +5,7 @@ Changes
 ----------------
 
 - Plone 5 Update, registered as legacy bundle
-  [agitator]
+  [agitator, rnix]
 
 
 1.6 (2015-06-25)

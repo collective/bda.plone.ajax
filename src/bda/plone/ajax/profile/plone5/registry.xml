@@ -2,6 +2,20 @@
 <registry xmlns:i18n="http://xml.zope.org/namespaces/i18n"
           i18n:domain="bda.plone.ajax">
 
+  <!--
+    jquerytools overlay is included for resource bundle plone-logged-in only,
+    so we provide it again for anonymous users.
+  -->
+  <records prefix="plone.bundles/bdajax-jquerytools-overlay"
+           interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+    <value key="enabled">True</value>
+    <value key="jscompilation">++resource++bdajax/overlay.js</value>
+    <value key="last_compilation"></value>
+    <value key="compile">False</value>
+    <value key="depends">plone</value>
+    <value key="expression">python: member is None</value>
+  </records>
+
   <records prefix="plone.bundles/bdajax"
            interface='Products.CMFPlone.interfaces.IBundleRegistry'>
     <value key="enabled">True</value>
