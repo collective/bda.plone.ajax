@@ -6,20 +6,13 @@
   <i18n:registerTranslations directory="locales" />
 
   <!-- include examples package in order to enable examples. -->
-
+  <!--
     <include package=".examples" />
-
+  -->
 
   <include package="bdajax" />
   <include package="plone.app.jquerytools" />
   <include file="profile.zcml" />
-
-  <!-- Plone specific -->
-  <browser:resourceDirectory
-    zcml:condition="installed Products.CMFPlone"
-    name="bda-plone-bdajax"
-    directory="static" />
-
 
   <!-- bdajax DOM elements -->
   <browser:viewlet
