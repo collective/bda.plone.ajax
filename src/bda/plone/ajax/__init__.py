@@ -4,6 +4,12 @@ try:
 except ImportError:
     import simplejson as json
 from bda.plone.ajax.utils import format_traceback
+from plone.keyring.interfaces import IKeyManager
+from plone.protect.authenticator import createToken
+from plone.protect.utils import getRoot
+from plone.protect.utils import getRootKeyManager
+from zope.component import ComponentLookupError
+from zope.component import getUtility
 
 
 def ajax_continue(request, continuation):
@@ -185,6 +191,15 @@ ajax_form_template = """\
     while(child != null && child.nodeType == 3) {
         child = child.nextSibling;
     }
+    var forms = child.getElementsByTagName('form');
+    for (var i = 0; i < forms.length; i++) {
+        var form = forms[i];
+        var authenticator = document.createElement('input');
+        authenticator.setAttribute('type', 'hidden');
+        authenticator.setAttribute('name', '_authenticator');
+        authenticator.setAttribute('value', '%(token)s');
+        form.appendChild(authenticator);
+    }
     parent.bdajax.render_ajax_form(child, '%(selector)s', '%(mode)s');
     parent.bdajax.continuation(%(next)s);
 </script>
@@ -199,6 +214,11 @@ def render_ajax_form(context, request, name):
     and ``bda.plone.ajax.form.selector`` must be given as request parameters.
     """
     try:
+        key_manager = getUtility(IKeyManager)
+    except ComponentLookupError:
+        key_manager = getRootKeyManager(getRoot(context))
+    token = createToken(manager=key_manager)
+    try:
         result = context.restrictedTraverse(name)()
         selector = request.get('bda.plone.ajax.form.selector', '#content')
         mode = request.get('bda.plone.ajax.form.mode', 'inner')
@@ -206,6 +226,7 @@ def render_ajax_form(context, request, name):
         form_continue = AjaxFormContinue(continuation)
         response = ajax_form_template % {
             'form': result,
+            'token': token,
             'selector': selector,
             'mode': mode,
             'next': form_continue.next,
@@ -220,6 +241,7 @@ def render_ajax_form(context, request, name):
         form_continue = AjaxFormContinue([continuation])
         response = ajax_form_template % {
             'form': result,
+            'token': token,
             'selector': selector,
             'mode': mode,
             'next': form_continue.next,

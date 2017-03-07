@@ -4,6 +4,10 @@ Changes
 1.7 (unreleased)
 ----------------
 
+- Add ``_authenticator`` hidden field when rendering ajax forms in order to
+  make CSRF protection work properly.
+  [rnix]
+
 - Plone 5 Update, registered as legacy bundle
   [agitator, rnix]
 
