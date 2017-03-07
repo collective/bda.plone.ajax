@@ -194,6 +194,9 @@ ajax_form_template = """\
     var forms = child.getElementsByTagName('form');
     for (var i = 0; i < forms.length; i++) {
         var form = forms[i];
+        if (form.querySelector('[name="_authenticator"]').length !== 0) {
+            continue;
+        }
         var authenticator = document.createElement('input');
         authenticator.setAttribute('type', 'hidden');
         authenticator.setAttribute('name', '_authenticator');
