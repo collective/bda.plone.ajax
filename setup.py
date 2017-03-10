@@ -25,7 +25,7 @@ setup(
     keywords='plone ajax javascript bdajax',
     author='Robert Niederreiter',
     author_email='dev@bluedynamics.com',
-    url=u'',
+    url=u'https://pypi.org/project/bda.plone.ajax/',
     license='GNU General Public Licence',
     packages=find_packages('src'),
     package_dir={'': 'src'},
