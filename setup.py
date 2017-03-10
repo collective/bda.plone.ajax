@@ -18,11 +18,11 @@ setup(
     classifiers=[
         'Environment :: Web Environment',
         'License :: OSI Approved :: GNU General Public License (GPL)',
-        'Operating System :: OS Independent',
+        'Operating System :: OS Independent :: 2.7',
         'Programming Language :: Python',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],
-    keywords='',
+    keywords='plone ajax javascript bdajax',
     author='Robert Niederreiter',
     author_email='dev@bluedynamics.com',
     url=u'',
