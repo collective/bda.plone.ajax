@@ -1,3 +1,5 @@
-include *.rst
-recursive-include src *
-recursive-exclude src *.pyc *.pyo
+include *.cfg *.rst *.in
+exclude bootstrap.py
+graft src
+graft docs
+global-exclude *pyc
