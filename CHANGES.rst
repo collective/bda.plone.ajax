@@ -1,7 +1,7 @@
 Changes
 =======
 
-1.7 (unreleased)
+1.7 (2017-03-10)
 ----------------
 
 - Add ``_authenticator`` hidden field when rendering ajax forms in order to
