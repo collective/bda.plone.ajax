@@ -12,6 +12,12 @@ Installation
 - Apply extension profile.
 
 
+NOTE
+====
+
+``bda.plone.ajax`` currently works with ``bdajax`` < 1.9 only
+
+
 Usage
 =====
 
@@ -23,7 +29,9 @@ Implement ajax action as browser view
 -------------------------------------
 
 An ajax action can be implemented as simple browser view. The easiest way is to
-render a template only. Create template ``tile_a.pt``::
+render a template only. Create template ``tile_a.pt``:
+
+.. code-block:: xml
 
     <div xmlns:ajax="http://namesspaces.bluedynamics.eu/ajax" tal:omit-tag="">
 
@@ -44,7 +52,9 @@ render a template only. Create template ``tile_a.pt``::
 
     </div>
 
-Configure via ZCML::
+Configure via ZCML:
+
+.. code-block:: xml
 
     <browser:page
       for="*"
@@ -56,7 +66,9 @@ Configure via ZCML::
 Implement ajax action as content provider
 -----------------------------------------
 
-Create a template ``tile_b.pt`` containing the markup::
+Create a template ``tile_b.pt`` containing the markup:
+
+.. code-block:: xml
 
     <div xmlns:ajax="http://namesspaces.bluedynamics.eu/ajax" tal:omit-tag="">
 
@@ -80,7 +92,9 @@ Create a template ``tile_b.pt`` containing the markup::
 
     </div>
 
-Create content provider in ``provider.py``::
+Create content provider in ``provider.py``:
+
+.. code-block:: python
 
     from Acquisition import Explicit
     from zope.interface import (
@@ -116,7 +130,9 @@ Create content provider in ``provider.py``::
             ajax_message(self.request, 'Demo continuation message', flavor='info')
             return self.template(self)
 
-Configure provider via ZCML::
+Configure provider via ZCML:
+
+.. code-block:: xml
 
     <adapter
       name="bdajax_example_tile_b"
@@ -128,7 +144,9 @@ Implement a wrapper view
 ------------------------
 
 The two ajax action rendering snippets above each render a tile only. now we
-need to wrap this inside a plone view. Create template ``ploneview.pt``::
+need to wrap this inside a plone view. Create template ``ploneview.pt``:
+
+.. code-block:: xml
 
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
           xmlns:tal="http://xml.zope.org/namespaces/tal"
@@ -149,7 +167,9 @@ need to wrap this inside a plone view. Create template ``ploneview.pt``::
     </body>
     </html>
 
-And register via ZCML::
+And register via ZCML:
+
+.. code-block:: xml
 
     <browser:page
       for="*"
@@ -168,7 +188,9 @@ Implement an ajax form
 Create a view which renders a form.
 
 Create template named ``ajaxform.pt``. The attribute ``ajax:form`` tells
-bdajax to handle this form::
+bdajax to handle this form:
+
+.. code-block:: xml
 
     <form xmlns:ajax="http://namesspaces.bluedynamics.eu/ajax"
           id="example_ajaxform"
@@ -194,7 +216,9 @@ bdajax to handle this form::
 
     </form>
 
-Create the view class::
+Create the view class:
+
+.. code-block:: python
 
     from Products.Five import BrowserView
     from bda.plone.ajax import ajax_continue
@@ -228,7 +252,9 @@ Create the view class::
                 ajax_continue(self.request, AjaxMessage('Success!', 'info', None))
             return super(AjaxForm, self).__call__()
 
-Register view via ZCML::
+Register view via ZCML:
+
+.. code-block:: xml
 
     <browser:page
       for="*"
@@ -237,7 +263,9 @@ Register view via ZCML::
       template="ajaxform.pt"
       permission="zope2.View" />
 
-Create wrapper view for form named ``ajaxformview.pt``::
+Create wrapper view for form named ``ajaxformview.pt``:
+
+.. code-block:: xml
 
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
           xmlns:tal="http://xml.zope.org/namespaces/tal"
@@ -258,7 +286,9 @@ Create wrapper view for form named ``ajaxformview.pt``::
     </body>
     </html>
 
-And register via ZCML::
+And register via ZCML:
+
+.. code-block:: xml
 
     <browser:page
       for="*"
@@ -273,7 +303,9 @@ Implement ajax batch
 --------------------
 
 Create a batch implementation in python, i.e. ``examplebatch.py`` calculating
-batch vocab::
+batch vocab:
+
+.. code-block:: python
 
     from Products.Five import BrowserView
     from bda.plone.ajax.batch import Batch
@@ -313,7 +345,9 @@ batch vocab::
                 })
             return ret
 
-Create batched result view::
+Create batched result view:
+
+.. code-block:: python
 
     class BatchedResult(BrowserView):
 
@@ -329,7 +363,9 @@ Create batched result view::
             end = start + SLICESIZE
             return result[start:end]
 
-Create batched result template, i.e. ``batchedresult.pt``::
+Create batched result template, i.e. ``batchedresult.pt``:
+
+.. code-block:: xml
 
     <div xmlns="http://www.w3.org/1999/xhtml"
          xml:lang="en"
@@ -351,7 +387,9 @@ Create batched result template, i.e. ``batchedresult.pt``::
 
     </div>
 
-Create wrapper view, i.e. ``batchview.pt``::
+Create wrapper view, i.e. ``batchview.pt``:
+
+.. code-block:: xml
 
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
           xmlns:tal="http://xml.zope.org/namespaces/tal"
@@ -373,7 +411,9 @@ Create wrapper view, i.e. ``batchview.pt``::
     </body>
     </html>
 
-And register views via ZCML::
+And register views via ZCML:
+
+.. code-block:: xml
 
     <browser:page
       for="*"
