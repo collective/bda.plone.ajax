@@ -43,15 +43,24 @@ def ajax_status_message(request, payload):
 
 
 class AjaxPath(object):
-    """Ajax path continuation definition.
+    """Ajax path configuration. Used to define continuation path for
+    client side.
     """
 
-    def __init__(self, path):
+    def __init__(self, path, target=None,
+                 action=None, event=None,
+                 overlay=None, overlay_css=None):
         self.path = path
+        self.target = target
+        self.action = action
+        self.event = event
+        self.overlay = overlay
+        self.overlay_css = overlay_css
 
 
 class AjaxAction(object):
-    """Ajax action continuation definition.
+    """Ajax action configuration. Used to define continuation actions for
+    client side.
     """
 
     def __init__(self, target, name, mode, selector):
@@ -62,7 +71,8 @@ class AjaxAction(object):
 
 
 class AjaxEvent(object):
-    """Ajax event continuation definition.
+    """Ajax event configuration. Used to define continuation events for
+    client side.
     """
 
     def __init__(self, target, name, selector):
@@ -72,7 +82,8 @@ class AjaxEvent(object):
 
 
 class AjaxMessage(object):
-    """Ajax message continuation definition.
+    """Ajax Message configuration. Used to define continuation messages for
+    client side.
     """
 
     def __init__(self, payload, flavor, selector):
@@ -115,6 +126,11 @@ class AjaxContinue(object):
                 continuation.append({
                     'type': 'path',
                     'path': definition.path,
+                    'target': definition.target,
+                    'action': definition.action,
+                    'event': definition.event,
+                    'overlay': definition.overlay,
+                    'overlay_css': definition.overlay_css
                 })
             if isinstance(definition, AjaxAction):
                 continuation.append({
@@ -203,8 +219,7 @@ ajax_form_template = """\
         authenticator.setAttribute('value', '%(token)s');
         form.appendChild(authenticator);
     }
-    parent.bdajax.render_ajax_form(child, '%(selector)s', '%(mode)s');
-    parent.bdajax.continuation(%(next)s);
+    parent.bdajax.render_ajax_form(child, '%(selector)s', '%(mode)s', %(next)s);
 </script>
 """
 

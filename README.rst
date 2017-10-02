@@ -12,12 +12,6 @@ Installation
 - Apply extension profile.
 
 
-NOTE
-====
-
-``bda.plone.ajax`` currently works with ``bdajax`` < 1.9 only
-
-
 Usage
 =====
 

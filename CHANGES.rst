@@ -4,7 +4,8 @@ Changes
 1.8 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Adopt to ``bdajax`` 1.10.
+  [rnix]
 
 
 1.7 (2017-03-10)
