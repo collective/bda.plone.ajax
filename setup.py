@@ -42,7 +42,7 @@ setup(
         'setuptools',
         'Plone',
         'plone.app.jquerytools',
-        'bdajax>=1.4',
+        'bdajax>=1.10',
     ],
     entry_points="""
     [z3c.autoinclude.plugin]
