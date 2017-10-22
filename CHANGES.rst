@@ -4,6 +4,10 @@ Changes
 1.8 (unreleased)
 ----------------
 
+- Check whether child is null before searching for elements by tag name in
+  ajax form response.
+  [rnix]
+
 - Adopt to ``bdajax`` 1.10.
   [rnix]
 
