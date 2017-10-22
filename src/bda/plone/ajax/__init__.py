@@ -207,7 +207,10 @@ ajax_form_template = """\
     while(child != null && child.nodeType == 3) {
         child = child.nextSibling;
     }
-    var forms = child.getElementsByTagName('form');
+    var forms = new Array();
+    if (child != null) {
+        var forms = child.getElementsByTagName('form');
+    }
     for (var i = 0; i < forms.length; i++) {
         var form = forms[i];
         if (form.querySelector('[name="_authenticator"]').length !== 0) {
