@@ -244,7 +244,6 @@ Create the view class:
         def __call__(self):
             if self.submitted and not self.error:
                 ajax_continue(self.request, AjaxMessage('Success!', 'info', None))
-            return super(AjaxForm, self).__call__()
 
 Register view via ZCML:
 
