@@ -40,7 +40,7 @@ setup(
     zip_safe=False,
     install_requires=[
         'setuptools',
-        'Plone',
+        'Products.CMFPlone',
         'plone.app.jquerytools',
         'bdajax>=1.10',
     ],

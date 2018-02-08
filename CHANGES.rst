@@ -4,6 +4,9 @@ Changes
 1.8 (unreleased)
 ----------------
 
+- Depend on ``Products.CMFPlone`` instead of ``Plone`` to not fetch unnecessary dependencies.
+  [thet]
+
 - Check whether child is null before searching for elements by tag name in
   ajax form response.
   [rnix]
