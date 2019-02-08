@@ -57,7 +57,7 @@ class Action(BrowserView):
             ret['payload'] = renderer.render()
             self.continuation(ret)
             return json.dumps(ret)
-        except Exception, e:
+        except Exception as e:
             logger.exception(e)
             tb = format_traceback()
             continuation = AjaxContinue(

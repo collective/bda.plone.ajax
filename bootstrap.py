@@ -73,7 +73,7 @@ except ImportError:
     try:
         from urllib.request import urlopen
     except ImportError:
-        from urllib2 import urlopen
+        from six.moves.urllib.request import urlopen
 
     # XXX use a more permanent ez_setup.py URL when available.
     exec(urlopen('https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py'

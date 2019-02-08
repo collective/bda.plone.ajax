@@ -1,5 +1,6 @@
 from Products.Five import BrowserView
 from bda.plone.ajax.batch import Batch
+from six.moves import range
 
 
 RESULTLEN = 45
@@ -45,7 +46,7 @@ class BatchedResult(BrowserView):
 
     @property
     def slice(self):
-        result = range(RESULTLEN)
+        result = list(range(RESULTLEN))
         current = int(self.request.get('b_page', '0'))
         start = current * SLICESIZE
         end = start + SLICESIZE
