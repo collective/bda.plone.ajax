@@ -1,7 +1,7 @@
 Changes
 =======
 
-1.8 (unreleased)
+1.8 (2019-02-08)
 ----------------
 
 - Depend on ``Products.CMFPlone`` instead of ``Plone`` to not fetch unnecessary dependencies.
