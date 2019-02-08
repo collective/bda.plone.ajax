@@ -1,10 +1,11 @@
 Changes
 =======
 
-1.9 (unreleased)
+2.0 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Drop Plone 4 support
+  Remove dependency on plone.app.jquerytools and use jquerytools from bdajax
 
 
 1.8 (2019-02-08)

@@ -3,7 +3,7 @@ from setuptools import setup
 from setuptools import find_packages
 
 
-version = '1.9.dev0'
+version = '2.0.dev0'
 shortdesc ="bdajax integration for Plone."
 longdesc = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
 longdesc += open(os.path.join(os.path.dirname(__file__), 'CHANGES.rst')).read()
@@ -18,9 +18,8 @@ setup(
     classifiers=[
         "Environment :: Web Environment",
         "Framework :: Plone",
-        "Framework :: Plone :: 4.3",
-        "Framework :: Plone :: 5.0",
         "Framework :: Plone :: 5.1",
+        "Framework :: Plone :: 5.2",
         "Framework :: Zope2",
         "License :: OSI Approved :: GNU General Public License (GPL)",
         "Operating System :: OS Independent",
@@ -41,7 +40,6 @@ setup(
     install_requires=[
         'setuptools',
         'Products.CMFPlone',
-        'plone.app.jquerytools',
         'bdajax>=1.10',
     ],
     entry_points="""
