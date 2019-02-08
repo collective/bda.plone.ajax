@@ -6,26 +6,10 @@
   <include package="Products.GenericSetup" file="meta.zcml" />
 
   <genericsetup:registerProfile
-    zcml:condition="not-have plone-5"
     name="default"
     title="bda.plone.ajax"
-    directory="profile/plone4"
+    directory="profile/default"
     description="Extension profile for bda.plone.ajax."
-    provides="Products.GenericSetup.interfaces.EXTENSION" />
-
-  <genericsetup:registerProfile
-    zcml:condition="have plone-5"
-    name="default"
-    title="bda.plone.ajax"
-    directory="profile/plone5"
-    description="Extension profile for bda.plone.ajax."
-    provides="Products.GenericSetup.interfaces.EXTENSION" />
-
-  <genericsetup:registerProfile
-    name="install-base"
-    title="bda.plone.ajax:base"
-    directory="profile/base"
-    description="Base extension profile for bda.plone.ajax."
     provides="Products.GenericSetup.interfaces.EXTENSION" />
 
   <!-- Hide profiles/products from Quick Installer -->
