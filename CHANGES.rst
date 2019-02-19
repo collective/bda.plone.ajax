@@ -5,7 +5,7 @@ Changes
 ----------------
 
 - Drop Plone 4 support
-  Remove dependency on plone.app.jquerytools and use jquerytools from bdajax
+  Minimal custom jquerytools with overlay added no more dependency on plone.app.jquerytools
 
 
 1.8 (2019-02-08)
