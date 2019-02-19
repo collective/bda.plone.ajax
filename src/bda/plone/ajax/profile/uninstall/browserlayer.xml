@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<layers>
+  <layer
+    name="bda.plone.ajax" remove="true"
+    interface="bda.plone.ajax.interfaces.IAjaxLayer" />
+</layers>
