@@ -12,6 +12,14 @@
     description="Extension profile for bda.plone.ajax."
     provides="Products.GenericSetup.interfaces.EXTENSION" />
 
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="bda.plone.ajax (uninstall)"
+      directory="profiles/uninstall"
+      description="Uninstalls the bda.plone.ajax."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
   <!-- Hide profiles/products from Quick Installer -->
   <utility factory=".setuphandlers.HiddenProfiles" name="bda.plone.ajax" />
   <utility factory=".setuphandlers.HiddenProducts" name="bda.plone.ajax" />
