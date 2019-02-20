@@ -20,4 +20,7 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
+  <!-- Hide profiles/products from Quick Installer -->
+  <utility factory=".setuphandlers.HiddenProfiles" name="bda.plone.ajax" />
+
 </configure>
