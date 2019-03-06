@@ -5,8 +5,12 @@ Changes
 ----------------
 
 - Drop Plone 4 support (Needs 5.1+). 
-  Add Python 3 support.
-  Minimal custom jquerytools with overlay added, no more dependency on ``plone.app.jquerytools``.
+  [agitator]
+  
+- Add Python 3 support.
+  [agitator]
+  
+- Minimal custom jquerytools with overlay added, no more dependency on ``plone.app.jquerytools``.
   [agitator]
 
 
