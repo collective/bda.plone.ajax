@@ -4,8 +4,9 @@ Changes
 2.0 (unreleased)
 ----------------
 
-- Drop Plone 4 support
-  Minimal custom jquerytools with overlay added no more dependency on plone.app.jquerytools
+- Drop Plone 4 support (Needs 5.1+).
+  Minimal custom jquerytools with overlay added, no more dependency on ``plone.app.jquerytools``.
+  [agitator]
 
 
 1.8 (2019-02-08)
