@@ -1,6 +1,7 @@
-import os
-from setuptools import setup
 from setuptools import find_packages
+from setuptools import setup
+
+import os
 
 
 version = '2.0.dev0'
@@ -18,6 +19,7 @@ setup(
     classifiers=[
         "Environment :: Web Environment",
         "Framework :: Plone",
+        "Framework :: Plone :: Addon",
         "Framework :: Plone :: 5.1",
         "Framework :: Plone :: 5.2",
         "Framework :: Zope :: 2",
@@ -28,8 +30,6 @@ setup(
         "Programming Language :: Python :: 3.7",
         "License :: OSI Approved :: GNU General Public License (GPL)",
         "Operating System :: OS Independent",
-        "Programming Language :: Python",
-        "Programming Language :: Python :: 2.7",
         "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
     ],
     keywords='plone ajax javascript bdajax',
