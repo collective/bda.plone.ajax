@@ -44,7 +44,7 @@ setup(
     zip_safe=False,
     install_requires=[
         'setuptools',
-        'Products.CMFPlone',
+        'Products.CMFPlone>=5.1',
         'bdajax>=1.10',
     ],
     entry_points="""
