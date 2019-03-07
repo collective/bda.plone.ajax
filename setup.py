@@ -17,20 +17,20 @@ setup(
     description=shortdesc,
     long_description=longdesc,
     classifiers=[
-        "Environment :: Web Environment",
-        "Framework :: Plone",
-        "Framework :: Plone :: Addon",
-        "Framework :: Plone :: 5.1",
-        "Framework :: Plone :: 5.2",
-        "Framework :: Zope :: 2",
-        "Framework :: Zope :: 4",
-        "Programming Language :: Python",
-        "Programming Language :: Python :: 2.7",
-        "Programming Language :: Python :: 3.6",
-        "Programming Language :: Python :: 3.7",
-        "License :: OSI Approved :: GNU General Public License (GPL)",
-        "Operating System :: OS Independent",
-        "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+        'Environment :: Web Environment',
+        'Framework :: Plone',
+        'Framework :: Plone :: Addon',
+        'Framework :: Plone :: 5.1',
+        'Framework :: Plone :: 5.2',
+        'Framework :: Zope :: 2',
+        'Framework :: Zope :: 4',
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'License :: OSI Approved :: GNU General Public License (GPL)',
+        'Operating System :: OS Independent',
+        'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],
     keywords='plone ajax javascript bdajax',
     author='Robert Niederreiter',
@@ -50,5 +50,5 @@ setup(
     entry_points="""
     [z3c.autoinclude.plugin]
     target = plone
-    """,
-    )
+    """
+)
