@@ -3,9 +3,11 @@
           i18n:domain="bda.plone.ajax">
 
   <records prefix="plone.bundles/plonebdajax-jquerytools-overlay"
-           interface='Products.CMFPlone.interfaces.IBundleRegistry' remove="true" />
+           interface="Products.CMFPlone.interfaces.IBundleRegistry"
+           remove="true" />
 
   <records prefix="plone.bundles/bdajax"
-           interface='Products.CMFPlone.interfaces.IBundleRegistry' remove="true" />
+           interface="Products.CMFPlone.interfaces.IBundleRegistry"
+           remove="true" />
 
 </registry>
