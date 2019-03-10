@@ -1,7 +1,7 @@
 Changes
 =======
 
-2.0 (unreleased)
+2.0 (2019-03-10)
 ----------------
 
 - Drop Plone 4 support (Needs 5.1+). 
