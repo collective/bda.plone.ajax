@@ -4,11 +4,11 @@
      i18n:domain="bda.plone.ajax"
      tal:omit-tag="">
 
-  <div tal:condition="view/display"
+  <div tal:condition="python:view.display"
        class="batch">
 
     <tal:fistpage
-        define="firstpage view/firstpage;
+        define="firstpage python:view.firstpage;
                 invisible python:not firstpage['visible'] or firstpage['current'];
                 css string:page;
                 css python:invisible and css + ' invisible' or css"
@@ -22,7 +22,7 @@
          tal:attributes="href firstpage/url;
                          class css;
                          ajax:target firstpage/url;
-                         ajax:event string:batchclicked:.${view/batchname}sensitiv;"
+                         ajax:event string:batchclicked:.${python:view.batchname}sensitiv;"
          i18n:translate="first">First</a>
 
       <a href="javascript:void(0)"
@@ -33,7 +33,7 @@
     </tal:fistpage>
 
     <tal:prevpage
-        define="prevpage view/prevpage;
+        define="prevpage python:view.prevpage;
                 invisible python:not prevpage['visible'] or prevpage['current'];
                 css string:page;
                 css python:invisible and css + ' invisible' or css"
@@ -47,7 +47,7 @@
          tal:attributes="href prevpage/url;
                          class css;
                          ajax:target prevpage/url;
-                         ajax:event string:batchclicked:.${view/batchname}sensitiv"
+                         ajax:event string:batchclicked:.${python:view.batchname}sensitiv"
          i18n:translate="previous">Previous</a>
 
       <a href="javascript:void(0)"
@@ -59,7 +59,7 @@
 
     <span>
 
-      <tal:pages repeat="page view/pages">
+      <tal:pages repeat="page python:view.pages">
         <tal:page
             define="invisible not:page/visible;
                     current page/current;
@@ -75,7 +75,7 @@
              tal:attributes="href page/url;
                              class css;
                              ajax:target page/url;
-                             ajax:event string:batchclicked:.${view/batchname}sensitiv"
+                             ajax:event string:batchclicked:.${python:view.batchname}sensitiv"
              tal:content="page/page">X</a>
 
            <a href="javascript:void(0)"
@@ -89,7 +89,7 @@
     </span>
 
     <tal:nextpage
-        define="nextpage view/nextpage;
+        define="nextpage python:view.nextpage;
                 invisible python:not nextpage['visible'] or nextpage['current'];
                 css string:page;
                 css python:invisible and css + ' invisible' or css"
@@ -103,7 +103,7 @@
          tal:attributes="href nextpage/url;
                          class css;
                          ajax:target nextpage/url;
-                         ajax:event string:batchclicked:.${view/batchname}sensitiv"
+                         ajax:event string:batchclicked:.${python:view.batchname}sensitiv"
          i18n:translate="next">Next</a>
 
       <a href="javascript:void(0)"
@@ -114,7 +114,7 @@
     </tal:nextpage>
 
     <tal:lastpage
-        define="lastpage view/lastpage;
+        define="lastpage python:view.lastpage;
                 invisible python:not lastpage['visible'] or lastpage['current'];
                 css string:page;
                 css python:invisible and css + ' invisible' or css"
@@ -128,7 +128,7 @@
          tal:attributes="href lastpage/url;
                          class css;
                          ajax:target lastpage/url;
-                         ajax:event string:batchclicked:.${view/batchname}sensitiv"
+                         ajax:event string:batchclicked:.${python:view.batchname}sensitiv"
          i18n:translate="last">Last</a>
 
       <a href="javascript:void(0)"

@@ -4,18 +4,19 @@ Changes
 2.0.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Use Python expressions instead of TALES in ``batch.pt``.
+  [jensens]
 
 
 2.0 (2019-03-10)
 ----------------
 
-- Drop Plone 4 support (Needs 5.1+). 
+- Drop Plone 4 support (Needs 5.1+).
   [agitator]
-  
+
 - Add Python 3 support.
   [agitator]
-  
+
 - Minimal custom jquerytools with overlay added, no more dependency on ``plone.app.jquerytools``.
   [agitator]
 
