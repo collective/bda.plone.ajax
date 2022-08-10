@@ -22,4 +22,14 @@
   <!-- Hide profiles/products from Quick Installer -->
   <utility factory=".setuphandlers.HiddenProfiles" name="bda.plone.ajax" />
 
+  <!-- upgradeSteps -->
+  <genericsetup:upgradeDepends
+      title="Reload Resourceregistry"
+      description=""
+      profile="bda.plone.ajax:default"
+      source="2"
+      destination="3000"
+      import_steps="plone.app.registry"
+      />
+
 </configure>

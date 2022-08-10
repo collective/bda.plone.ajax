@@ -7,6 +7,10 @@ Changes
 - Use Python expressions instead of TALES in ``batch.pt``.
   [jensens]
 
+- Update ``condition`` for jQuery overlay resources and adjust ``depends`` for
+  bdajax resources.
+  [petschki]
+
 
 2.0 (2019-03-10)
 ----------------
