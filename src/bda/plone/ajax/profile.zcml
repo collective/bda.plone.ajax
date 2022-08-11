@@ -27,8 +27,8 @@
       title="Reload Resourceregistry"
       description=""
       profile="bda.plone.ajax:default"
-      source="2"
-      destination="3000"
+      source="*"
+      destination="3001"
       import_steps="plone.app.registry"
       />
 
