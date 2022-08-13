@@ -30,7 +30,7 @@ I18NDUDE=../../../../../../bin/i18ndude
 
 if test ! -e $I18NDUDE; then
         echo "You must install i18ndude with buildout"
-        echo "See http://svn.plone.org/svn/collective/collective.developermanual/trunk/source/i18n/localization.txt"
+        echo "See https://svn.plone.org/svn/collective/collective.developermanual/trunk/source/i18n/localization.txt"
         exit
 fi
 
