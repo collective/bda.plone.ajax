@@ -2,7 +2,7 @@ Integration package
 ===================
 
 This is the plone integration package for
-`bdajax <http://github.com/bluedynamics/bdajax/>`_.
+`bdajax <https://github.com/bluedynamics/bdajax/>`_.
 
 
 Installation
@@ -438,9 +438,9 @@ Source Code
 
 If you want to help with the development (improvement, update, bug-fixing, ...) of ``bda.plone.ajax`` this is a great idea!
 
-The code is located in the `github collective <http://github.com/collective/bda.plone.ajax>`_.
+The code is located in the `github collective <https://github.com/collective/bda.plone.ajax>`_.
 
-You can clone it or `get access to the github-collective <http://collective.github.com/>`_ and work directly on the project.
+You can clone it or `get access to the github-collective <https://collective.github.io>`_ and work directly on the project.
 
 Maintainers are Robert Niederreiter and the BlueDynamics Alliance developer team.
 We appreciate any contribution and if a release is needed to be done on pypi, please just contact one of us:
