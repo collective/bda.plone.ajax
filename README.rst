@@ -12,13 +12,6 @@ Installation
 - Apply extension profile.
 
 
-Usage
-=====
-
-For detailed documentation about ``bdajax`` please refer to
-`bdajax <http://github.com/bluedynamics/bdajax/>`_.
-
-
 Implement ajax action as browser view
 -------------------------------------
 
