@@ -1,7 +1,7 @@
 Changes
 =======
 
-2.0.1 (unreleased)
+2.0.1 (2024-04-17)
 ------------------
 
 - Use Python expressions instead of TALES in ``batch.pt``.
