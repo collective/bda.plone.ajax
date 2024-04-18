@@ -1,14 +1,20 @@
 from setuptools import find_packages
 from setuptools import setup
-
 import os
+
+
+def read_file(name):
+    with open(os.path.join(os.path.dirname(__file__), name)) as f:
+        return f.read()
 
 
 version = '2.0.2.dev0'
 shortdesc = "bdajax integration for Plone."
-longdesc = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
-longdesc += open(os.path.join(os.path.dirname(__file__), 'CHANGES.rst')).read()
-longdesc += open(os.path.join(os.path.dirname(__file__), 'LICENSE.rst')).read()
+longdesc = '\n\n'.join([read_file(name) for name in [
+    'README.rst',
+    'CHANGES.rst',
+    'LICENSE.rst'
+]])
 
 
 setup(
@@ -19,15 +25,16 @@ setup(
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Plone',
+        'Framework :: Plone :: 6.0',
         'Framework :: Plone :: Addon',
-        'Framework :: Plone :: 5.1',
-        'Framework :: Plone :: 5.2',
-        'Framework :: Zope :: 2',
-        'Framework :: Zope :: 4',
+        'Framework :: Zope',
+        'Framework :: Zope :: 5',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
+        'Programming Language :: Python :: 3.12',
         'License :: OSI Approved :: GNU General Public License (GPL)',
         'Operating System :: OS Independent',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
